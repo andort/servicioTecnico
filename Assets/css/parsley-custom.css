@@ -1,0 +1,23 @@
+.parsley-error-list
+{
+
+  padding-left: 0 !important;
+}
+input.parsley-error, textarea.parsley-error, select.parsley-error{
+  color: #000 !important;
+  background-color: #F2DEDE !important;
+  border: 1px solid #EED3D7 !important;
+}
+
+input.parsley-success, textarea.parsley-success, select.parsley-success {
+  color: #000 !important;
+  background-color: #fff !important;
+  border: 1px solid #D6E9C6 !important;
+}
+
+.parsley-error-list li
+{
+
+  list-style: none;
+}
+
