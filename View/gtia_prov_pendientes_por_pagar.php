@@ -12,29 +12,30 @@
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 
 <!-- Bootstrap core CSS -->
-    <link href="../Assets/ico/icop.ico" rel="shortcut icon">
+	<link href="../Assets/ico/icop.ico" rel="shortcut icon">
     <link href="../Assets/css/bootstrap.css" rel="stylesheet">
     <link href="../Assets/css/style.css" rel="stylesheet">
     <link href="../Assets/css/animate.css" rel="stylesheet">
     
 <!-- Estilos para las validaciones con Parsley -->
-    <link type="text/css" rel="stylesheet" href="../Assets/css/parsley-custom.css" media="all" />
-      
-<!-- Estilos para las Select2 -->
-    <link type="text/css" rel="stylesheet" href="../Assets/css/select2348/select2.css" rel="stylesheet" />
+      <link type="text/css" rel="stylesheet" href="../Assets/css/parsley-custom.css" media="all" />
     
 <!-- Alertas pnotify -->   
     <link href="../Assets/css/pnotify.custom.css" rel="stylesheet">
     
     
 <!-- Estilos para la segunda libreria de datepicker en boostrap -->
-    <link type="text/css" rel="stylesheet" href="../Assets/css/bootstrap-datetimepicker.css" media="all" />
+      <link type="text/css" rel="stylesheet" href="../Assets/css/bootstrap-datetimepicker.css" media="all" />
+      
+      
+<!-- DataTables CSS -->
+    <link rel="stylesheet" type="text/css" href="../Assets/datatable/css/jquery.dataTables.css">
+      
 
-    <link rel="stylesheet" type="text/css" href="../Assets/datatable/css/jquery.dataTables.css">   
+<!-- Estilos para las Select2 -->
+    <link type="text/css" rel="stylesheet" href="../Assets/css/select2348/select2.css" rel="stylesheet" />
 
-
-
-<title>.: Ledacom - Servicio :.</title>
+<title>.: Ledacom - Gtias por pagar por proveedor :.</title>
 
 
 </head>
@@ -59,8 +60,8 @@
             <div class="col-lg-8">
                 <ol class="breadcrumb">
                   <li><a href="#">Inicio</a></li>
-                  <li class="active">Gestion Servicios</li>
-                   <li class="active">Solucion Servicios</li>
+                  <li class="active">Proveedor</li>
+                   <li class="active">Gestión Gtias por Pagar del Proveedor</li>
                 </ol>
             </div>
             <div class="col-lg-4 text-right">
@@ -81,45 +82,90 @@
         <div class="panel-heading">
             <div class="row">
                 <div class="col-lg-8">
-                    <h5><span class="glyphicon glyphicon-user"></span>&nbsp;Solucion de Servicios</h5>
+                    <h5><span class="glyphicon glyphicon-send"></span>&nbsp;&nbsp;&nbsp;Gtias Pendientes por pagar del  Proveedor</h5>
                 </div>
+                <div class="col-lg-4">
+                <div class="form-group">
+                <div class="col-lg-12 class_topborder">
+                
+                </div></div>
+            </div>
             </div>
         </div>
    
     <!--  Fin servicio --> 
     
 
-
-     
-      <div class="panel-body"> <!--  Inicio BODY -->   
+		<!--  Inicio BODY -->  
+        <!--  Inicio BODY -->  
+		<div class="panel-body">  
             
-                 
-            <!-- Table -->
-            <div class="table-responsive">
-              <table id="table_id" class="display" cellspacing="0" width="100%">
-                <thead>
-                  <tr>
-                    <th class="small">Nro Servicio</th>
-                    <th class="small">Fecha</th>
-                    <th class="small">Cliente</th>
-                    <th class="small">Observación Cliente</th>
-                    <th class="small">Observación Tecnico</th>            
-                    <th class="small">Opcion</th>  
-                  </tr>
-                </thead>
-                <tbody>
-                    <?php echo $listar;?>
-                </tbody>
-              </table>
+            
+		<div class="row">
+        	<form id="form1" role="form" method="post">
+            <div class="col-lg-8">
+                <div class="panel panel-info">
+                <div class="panel-body class_padding">
+                	
+                	<div class="col-lg-6">
+                    <div class="form-group">
+                        <select type="text" class="btn-block" name="txtProv" id="txtProv" parsley-required="true">
+                        <option value="">Seleccione Proveedor...</option>
+                        <?php echo $combo_Prov?>
+                        </select>
+                    </div>
+                	</div>
+
+                	<div class="col-lg-6">
+                    <div class="form-group">
+                    <button type="submit" class="btn btn-success input-sm btn-block " id="btnBuscar" name="btnBuscar">Buscar</button>                        
+                    </div>
+           			</div>
+                    
+                </div>
+                </div>
             </div>
+            
+            <div class="col-lg-4">
+                <!--<div class="panel panel-primary">
+                <div class="panel-body class_padding">
+                    <div class="col-lg-12">
+                    <div class="form-group">
+                        <button type="submit" class="btn btn-primary input-sm btn-block" id="btnRep" name="btnRep">Generar Reporte</button>                        
+                    </div>
+                    </div>
+                </div>
+                </div>-->
+            </div>
+        </form>
+        </div>
+        
+            
+            
+    
+        <!-- Table -->
+        <div class="table-responsive">
+          <table id="table_id" class="display" cellspacing="0" width="100%">
+            <thead>
+              <tr>
+                <th class="small">Nro</th>
+                <th class="small">Prov y Fecha</th>
+                <th class="small">Fecha envio a proveedor</th>
+                <th class="small">Artículo</th>
+                <th class="small">Marca y Ref.</th>
+                <th class="small">Serial</th>
+                <!-- <th class="small">Observación Tecnico</th> -->
+                <th class="small center">Opcion</th>
+              </tr>
+            </thead>
+            <tbody>
+                <?php echo $listar;?>
+            </tbody>
+          </table>
+        </div>
           
-            
-            <!-- Fin Table 01 -->
-            
-     </div> <!--  Fin BODY --> 
-     </div><!--aca terminar el footer panel-->
-   
-
+        </div>
+        </div> 
 
                       
     </section> <!-- FIN de seccion medio -->
@@ -127,11 +173,9 @@
 
 
 
-
-
-<!-- INICIO Modal SOLUCION SERVICIO -->
-<!-- INICIO Modal SOLUCION SERVICIO -->
- <div class="modal fade" id="modal_AddArt" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+<!-- INICIO Modal SOLUCION GARANTIAS RESPUESTAS POR EL PROVEEDOR -->
+<!-- INICIO Modal SOLUCION GARANTIAS RESPUESTAS POR EL PROVEEDOR -->
+ <div class="modal fade" id="modal_solucionGtiasProv" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
     <form id="form1" role="form" method="post">
       <div class="modal-lg">
         <div class="modal-content">
@@ -141,34 +185,36 @@
 
             <div class="panel panel-primary"> <!--  Inicio PANEL --> 
             <div class="panel-heading small">
-            	<div class="row class_topborder">
+                <div class="row class_topborder">
                 <div class="col-lg-4">
-                    <h5><span class="glyphicon glyphicon-th-large"></span>&nbsp;&nbsp;&nbsp;Solución de Servicio</h5>
+                    <h5><span class="glyphicon glyphicon-th-large"></span>&nbsp;&nbsp;&nbsp;Garantia pendiente por pagar</h5>
                 </div>
                 <div class="col-lg-4 text-right">
-                    <h5>&nbsp;Orden Nro.</h5>
+                    <h5>&nbsp;Numero Articulo.</h5>
                 </div>
                 <div class="col-lg-4">
-                	<div class="form-group">
+                    <div class="form-group">
                     <input  type="text" class="form-control input-sm" name="txt_id" id="txt_id" readonly="readonly">
                     </div>
                 </div>
-            	</div>
+                </div>
                 
+        
+
                 <div class="row">
                 <div class="col-lg-4">
                     <div class="form-group">
-                    <input  type="text" class="form-control input-sm"name="txt_cliente" id="txt_cliente" readonly="readonly">
+                    <input  type="text" class="form-control input-sm" name="txt_articulo" id="txt_articulo" readonly="readonly">
                     </div>
                 </div>
                 <div class="col-lg-4">
                     <div class="form-group">
-                    <input  type="text" class="form-control input-sm"name="txt_tel" id="txt_tel" readonly="readonly">
+                    <input  type="text" class="form-control input-sm" name="txt_marca_articulo" id="txt_marca_articulo" readonly="readonly">
                     </div>
                 </div>
                 <div class="col-lg-4">
                     <div class="form-group">
-                    <input  type="text" class="form-control input-sm" name="txt_fecha" id="txt_fecha" readonly="readonly">
+                    <input  type="text" class="form-control input-sm" name="txt_serial" id="txt_serial" readonly="readonly">
                     </div>
                 </div>
             </div>
@@ -178,23 +224,27 @@
             <div class="panel-body"> <!--  Inicio BODY --> 
 
                 <div class="row">
-                
+
                     <div class="col-lg-4">
                         <div class="form-group">
-                        <textarea class="form-control input-sm" rows="7" id="txt_ccliente" readonly="readonly" style="resize:none;"></textarea>
+                        <textarea class="form-control input-sm" rows="7" id="txt_fecha_envio" readonly="readonly" style="resize:none;"></textarea>
                         </div>
                     </div>
     
                     <div class="col-lg-4">
                         <div class="form-group">
-                        <textarea class="form-control input-sm" rows="7" id="txt_ctecnico" readonly="readonly" style="resize:none;"></textarea>
+                        <textarea class="form-control input-sm" rows="7" id="txt_valor" readonly="readonly" style="resize:none;"></textarea>
                         </div>
                     </div>
 
                     <div class="col-lg-4">
                     
                     <div class="form-group">
-                    <textarea class="form-control input-sm" rows="4" name="txtSolucion"  id="txtSolucion" placeholder="Comentario Solución..." style="resize:none;" parsley-required="true"></textarea>
+                    <textarea class="form-control input-sm" rows="2" name="txt_solucion"  id="txt_solucion" placeholder="Comentario Solución..." style="resize:none;" parsley-required="true"></textarea>
+                    </div>
+
+                    <div class="form-group">
+                    <textarea class="form-control input-sm" rows="2" name="txt_problema"  id="txt_problema" placeholder="Comentario Solución..." style="resize:none;" parsley-required="true"></textarea>
                     </div>
                     
                     <div class="form-group">
@@ -204,7 +254,7 @@
                     </select>
                     </div>                  
 
-                	</div>
+                    </div>
                 </div>
 
             </div> <!--  FIN BODY -->
@@ -214,7 +264,7 @@
                 <div class="col-lg-4">
                     <div class="form-group">
                     
-					</div>
+                    </div>
                 </div>
                 <div class="col-lg-4">
                     <div class="form-group">
@@ -238,8 +288,9 @@
       </div>
     </form>
 </div>
-<!-- FIN Modal SOLUCION SERVICIO -->
-<!-- FIN Modal SOLUCION SERVICIO -->
+<!-- FIN Modal SOLUCION GARANTIAS RESPUESTAS POR EL PROVEEDOR -->
+<!-- FIN Modal SOLUCION GARANTIAS RESPUESTAS POR EL PROVEEDOR -->
+
 
 
 
@@ -261,18 +312,14 @@
     <script type="text/javascript" src="../Assets/js/Parsley/language/js/messages.es.js" charset="UTF-8"></script>
     <script type="text/javascript" src="../Assets/js/Parsley/minificados/js/parsley.min.js" charset="UTF-8"></script>
     
-<!-- Scripts necesarios para la segunda libreria de datepicker -->
-    <script type="text/javascript" src="../Assets/js/Moment/js/moment-with-langs.min.js"></script>
-    <script type="text/javascript" src="../Assets/js/Bootstrap-DatePicker/js/bootstrap-datetimepicker.min.js" charset="UTF-8">               
-    </script>
         
-    <!-- DataTables -->
+<!-- DataTables -->
     <script type="text/javascript" charset="utf8" src="../Assets/datatable/js/jquery.dataTables.js"></script>       
     
     <script type="text/javascript">
 	
 	
-	//validar con parsley
+	//valida con parsley
     $('#form1').parsley();
 	
 	
@@ -314,8 +361,8 @@
     
     //Select Fecha Proveedor
     $(document).ready(function() {
-        $("#txtFechaprov").select2 ({
-        minimumInputLength :  2 });
+        $("#txtProv").select2 ({
+         });
     });
     
     //Select Artículo
@@ -341,16 +388,29 @@
 
 
     //funcion para llevar los datos al modal
-    function llevar_datos_modal(id, fecha, cliente, tel, coment1, coment2){
+    function llevar_datos_modal(id, articulo, marca_articulo, referencia, serial, fecha_envio, valor, solucion, problema){
         $("#txt_id").val(id);
-        $("#txt_fecha").val(fecha);
-        $("#txt_cliente").val(cliente);
-		$("#txt_tel").val(tel);
-        $("#txt_ccliente").val(coment1);
-        $("#txt_ctecnico").val(coment2);
+        $("#txt_articulo").val(articulo);
+        $("#txt_marca_articulo").val(marca_articulo);
+        $("#txt_referencia").val(referencia);
+        $("#txt_serial").val(serial);
+        $("#txt_fecha_envio").val(fecha_envio);
+        $("#txt_valor").val(valor);
+        $("#txt_solucion").val(solucion);
+        $("#txt_problema").val(problema);
     }
 
 
+
+    
+    //valida con parsley
+    function Validar_Parsley(div) {
+            if ($('#' + div).parsley('validate')) {
+                return true;
+            } else {
+                return false;
+            }
+        }
 
 
 
@@ -400,16 +460,7 @@
           });
 
     }
-  
-
-
-
     </script>
-
-
-
-
-
 </body>
 </html> 
 
