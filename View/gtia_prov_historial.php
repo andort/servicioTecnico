@@ -35,7 +35,7 @@
 <!-- Estilos para las Select2 -->
     <link type="text/css" rel="stylesheet" href="../Assets/css/select2348/select2.css" rel="stylesheet" />
 
-<title>.: Ledacom - Gtias por pagar por proveedor :.</title>
+<title>.: Ledacom - Historial Gtias finalizados :.</title>
 
 
 </head>
@@ -61,7 +61,7 @@
                 <ol class="breadcrumb">
                   <li><a href="#">Inicio</a></li>
                   <li class="active">Proveedor</li>
-                   <li class="active">Gestión Gtias por Pagar del Proveedor</li>
+                   <li class="active">Historial de artículos finalizados</li>
                 </ol>
             </div>
             <div class="col-lg-4 text-right">
@@ -82,7 +82,7 @@
         <div class="panel-heading">
             <div class="row">
                 <div class="col-lg-8">
-                    <h5><span class="glyphicon glyphicon-send"></span>&nbsp;&nbsp;&nbsp;Gtias Pendientes por pagar del  Proveedor</h5>
+                    <h5><span class="glyphicon glyphicon-send"></span>&nbsp;&nbsp;&nbsp;Historial de artículos finalizados</h5>
                 </div>
                 <div class="col-lg-4">
                 <div class="form-group">

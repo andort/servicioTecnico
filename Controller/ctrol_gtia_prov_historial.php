@@ -26,7 +26,7 @@
 	// osea los que ya se le enviaron al cliente - - - - - - - - - - - - - -
 	$c_Prov = tb_articulo::find_by_sql('SELECT proveedor
 											FROM tb_articulos
-											WHERE estado = 5
+											WHERE estado > 5
 											GROUP BY proveedor');
 	$combo_Prov = "";
 	foreach ($c_Prov as $key => $value){
@@ -150,6 +150,6 @@
 			}
 		}
 
-	include '../View/gtia_prov_pendientes_por_pagar.php';
+	include '../View/gtia_prov_historial.php';
 
 ?>

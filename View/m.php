@@ -50,7 +50,7 @@
             <li><a href="ctrol_addprov.php">Ingresar o Modificar Proveedor</a></li>
             <li><a href="ctrol_gtia_prov.php">Gestión Gtias Proveedor</a></li>
             <li><a href="ctrol_gtia_prov_pendientes_por_pagar.php">Listar Gtias Enviadas</a></li>
-            <li><a href="#">Historia Gtias Proveedor</a></li>
+            <li><a href="ctrol_gtia_prov_historial.php">Historia Gtias Proveedor</a></li>
           </ul>
         </li>
         

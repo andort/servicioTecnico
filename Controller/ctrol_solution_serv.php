@@ -7,6 +7,7 @@
 	include '../Model/tb_estado_movimiento.php';
 	include '../Model/tb_movimiento.php';
 	
+	date_default_timezone_set("America/Bogota");
 
 	$txtId1 = "";
 	$txtFecha1 = "";
@@ -31,23 +32,23 @@
 
 
 
-if (isset($_POST['btnEnviar'])){	
+	if (isset($_POST['btnEnviar'])){	
 
-	$serv =	tb_movimiento::find('last',array('conditions' => array('id_movimiento = ?',$_POST['txt_id'])));
+		$serv =	tb_movimiento::find('last',array('conditions' => array('id_movimiento = ?',$_POST['txt_id'])));
 
-	$serv->comentario_solucion = $_POST['txtSolucion'];
-	$serv->id_estado_movimiento = $_POST['txtRol'];
-	$serv->fecha_solucion = $fecha;
+		$serv->comentario_solucion = $_POST['txtSolucion'];
+		$serv->id_estado_movimiento = $_POST['txtRol'];
+		$serv->fecha_solucion = $fecha;
 
-	$serv->save();
-	echo "<script>	alert('Se Modifico SERVICIO TÉCNICO con Exito'); </script>";
+		$serv->save();
+		echo "<script>	alert('Se Modifico SERVICIO TÉCNICO con Exito'); </script>";
 
-		/*if (@$serv->save()){
+			/*if (@$serv->save()){
 
-			echo "<script>	alert('Se Modifico SERVICIO TÉCNICO con Exito'); </script>";
-			//mail($correo->email,$asunto,$comentario,$desde);
-			//mail('destinatario','asunto','textodelcorreo','desdedondeseenvia');
-		}	*/
+				echo "<script>	alert('Se Modifico SERVICIO TÉCNICO con Exito'); </script>";
+				//mail($correo->email,$asunto,$comentario,$desde);
+				//mail('destinatario','asunto','textodelcorreo','desdedondeseenvia');
+			}	*/
 	}
 
 
