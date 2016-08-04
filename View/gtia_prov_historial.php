@@ -267,15 +267,20 @@
                     </div>
                 </div>
                 <div class="col-lg-4">
-                    <div class="form-group">
+                    <!-- <div class="form-group">
                     <button type="button" class="btn btn-danger btn-sm btn-block" data-dismiss="modal">Cerrar</button>
-                    </div>
+                    </div> -->
                 </div>
                 <div class="col-lg-4">
                     <div class="form-group">
-                    <button type="submit" class="btn btn-primary btn-sm btn-block" name="btnEnviar" id="btnEnv">Solucion Servicio</button>
+                    <button type="button" class="btn btn-primary btn-sm btn-block" data-dismiss="modal">Aceptar</button>
                     </div>
                 </div>
+                <!-- <div class="col-lg-4">
+                    <div class="form-group">
+                    <button type="submit" class="btn btn-primary btn-sm btn-block" name="btnEnviar" id="btnEnv">Solucion Servicio</button>
+                    </div>
+                </div> -->
             </div> 
             
             </div> <!--  FIN FOOTER -->
