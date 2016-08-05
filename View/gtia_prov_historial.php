@@ -179,115 +179,65 @@
     <form id="form1" role="form" method="post">
       <div class="modal-lg">
         <div class="modal-content">
-          <div class="modal-body">
 
-            
-
-            <div class="panel panel-primary"> <!--  Inicio PANEL --> 
-            <div class="panel-heading small">
-                <div class="row class_topborder">
-                <div class="col-lg-4">
-                    <h5><span class="glyphicon glyphicon-th-large"></span>&nbsp;&nbsp;&nbsp;Garantia pendiente por pagar</h5>
-                </div>
-                <div class="col-lg-4 text-right">
-                    <h5>&nbsp;Numero Articulo.</h5>
-                </div>
-                <div class="col-lg-4">
-                    <div class="form-group">
-                    <input  type="text" class="form-control input-sm" name="txt_id" id="txt_id" readonly="readonly">
-                    </div>
-                </div>
-                </div>
-                
-        
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title" id="txt_articulo"></h4>
+            </div>
+            <div class="modal-body">
 
                 <div class="row">
-                <div class="col-lg-4">
-                    <div class="form-group">
-                    <input  type="text" class="form-control input-sm" name="txt_articulo" id="txt_articulo" readonly="readonly">
+
+                    <div class="col-lg-2 text-center font_big">
+                        <small>No. Articulo.</small>
+                        <B><h1 id="txt_id" class="font_big"></h1></B>
                     </div>
-                </div>
-                <div class="col-lg-4">
-                    <div class="form-group">
-                    <input  type="text" class="form-control input-sm" name="txt_marca_articulo" id="txt_marca_articulo" readonly="readonly">
+
+                    <div class="col-lg-5 font_big"><br />  
+                        <B><span>Ref: </span></B><span id="txt_referencia"></span><br />
+                        <B><span>Marca: </span></B><span id="txt_marca_articulo"></span><br />
+                        <B><span>Serial: </span></B><span id="txt_serial"></span>
                     </div>
-                </div>
-                <div class="col-lg-4">
-                    <div class="form-group">
-                    <input  type="text" class="form-control input-sm" name="txt_serial" id="txt_serial" readonly="readonly">
+
+                    <div class="col-lg-5 font_big"><br />  
+                        <B><span>Fecha Ingreso: </span></B><span id="txt_referencia"></span><br />
+                        <B><span>Fecha Envío: </span></B><span id="txt_fecha_envio"></span><br />
+                        <B><span>Fecha Resuelto: </span></B><span id="txt_serial"></span>
                     </div>
+
                 </div>
+                <hr>
+                <br />
+                <div class="row">
+
+                    <div class="col-lg-4">
+                        <textarea class="form-control input-sm" rows="4" id="txt_solucion" readonly="readonly" style="resize:none;">
+                        </textarea>
+                    </div>
+
+                    <div class="col-lg-4">
+                        <textarea class="form-control input-sm" rows="4" id="txt_problema" readonly="readonly" style="resize:none;">
+                        </textarea>
+                    </div>
+
+                    <div class="col-lg-4">
+                        <textarea class="form-control input-sm" rows="4" id="" readonly="readonly" style="resize:none;">
+                        </textarea>
+                    </div>
+
+                </div>
+
             </div>
 
-            </div> <!--  FIN PANEL HEADER --> 
-            
-            <div class="panel-body"> <!--  Inicio BODY --> 
-
-                <div class="row">
-
-                    <div class="col-lg-4">
-                        <div class="form-group">
-                        <textarea class="form-control input-sm" rows="7" id="txt_fecha_envio" readonly="readonly" style="resize:none;"></textarea>
-                        </div>
-                    </div>
-    
-                    <div class="col-lg-4">
-                        <div class="form-group">
-                        <textarea class="form-control input-sm" rows="7" id="txt_valor" readonly="readonly" style="resize:none;"></textarea>
-                        </div>
-                    </div>
-
-                    <div class="col-lg-4">
-                    
-                    <div class="form-group">
-                    <textarea class="form-control input-sm" rows="2" name="txt_solucion"  id="txt_solucion" placeholder="Comentario Solución..." style="resize:none;" parsley-required="true"></textarea>
-                    </div>
-
-                    <div class="form-group">
-                    <textarea class="form-control input-sm" rows="2" name="txt_problema"  id="txt_problema" placeholder="Comentario Solución..." style="resize:none;" parsley-required="true"></textarea>
-                    </div>
-                    
-                    <div class="form-group">
-                    <select  type="text" class="form-control input-sm" placeholder="Seleccionar" name="txtStatus" id="txtStatus" parsley-required="true">
-                            <option value="">Seleccione Nuevo Estado...</option>;
-                            <?php echo $combo_Estado ?>
-                    </select>
-                    </div>                  
-
-                    </div>
-                </div>
-
-            </div> <!--  FIN BODY -->
-            
-            <div class="panel-footer"><!--  INICIO FOOTER -->
-            <div class="row">
-                <div class="col-lg-4">
-                    <div class="form-group">
-                    
-                    </div>
+            <div class="modal-footer">
+                <div class="col-lg-8">
                 </div>
                 <div class="col-lg-4">
-                    <!-- <div class="form-group">
-                    <button type="button" class="btn btn-danger btn-sm btn-block" data-dismiss="modal">Cerrar</button>
-                    </div> -->
+                    <button type="button" class="btn btn-primary btn-block" data-dismiss="modal">Aceptar</button>
                 </div>
-                <div class="col-lg-4">
-                    <div class="form-group">
-                    <button type="button" class="btn btn-primary btn-sm btn-block" data-dismiss="modal">Aceptar</button>
-                    </div>
-                </div>
-                <!-- <div class="col-lg-4">
-                    <div class="form-group">
-                    <button type="submit" class="btn btn-primary btn-sm btn-block" name="btnEnviar" id="btnEnv">Solucion Servicio</button>
-                    </div>
-                </div> -->
-            </div> 
+            </div>
+          
             
-            </div> <!--  FIN FOOTER -->
-            </div> <!--  FIN PANEL --> 
-                
-               
-
             </div>
         </div>
       </div>
@@ -394,15 +344,15 @@
 
     //funcion para llevar los datos al modal
     function llevar_datos_modal(id, articulo, marca_articulo, referencia, serial, fecha_envio, valor, solucion, problema){
-        $("#txt_id").val(id);
-        $("#txt_articulo").val(articulo);
-        $("#txt_marca_articulo").val(marca_articulo);
-        $("#txt_referencia").val(referencia);
-        $("#txt_serial").val(serial);
-        $("#txt_fecha_envio").val(fecha_envio);
-        $("#txt_valor").val(valor);
-        $("#txt_solucion").val(solucion);
-        $("#txt_problema").val(problema);
+        $("#txt_id").html(id);
+        $("#txt_articulo").html(articulo);
+        $("#txt_marca_articulo").html(marca_articulo);
+        $("#txt_referencia").html(referencia);
+        $("#txt_serial").html(serial);
+        $("#txt_fecha_envio").html(fecha_envio);
+        $("#txt_valor").html(valor);
+        $("#txt_solucion").html(solucion);
+        $("#txt_problema").html(problema);
     }
 
 

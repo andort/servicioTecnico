@@ -77,12 +77,12 @@
 					<input type="hidden" id="txtDelet" name="txtDelet" value="'.$var1->id_articulo.'">
 					<button type="submit" class="btn btn-success btn-sm" id="Btn_Find" data-toggle="modal" data-target="#modal_solucionGtiasProv" 
 					onclick="llevar_datos_modal('."'".$var1->id_articulo."'".',
-												'."'"."Articulo: ".$var1->articulo."'".',
-												'."'"."Marca Articulo: ".$var1->marca_art."'".',
-												'."'"."Referencia: ".$var1->ref."'".',
-												'."'"."Serial: ".$var1->serial."'".',
-												'."'"."Fecha envio a proveedor: ".$var1->fecha_send_prov."'".',
-												'."'"."valor: ".$var1->valor."'".',
+												'."'".$var1->articulo."'".',
+												'."'".$var1->marca_art."'".',
+												'."'".$var1->ref."'".',
+												'."'".$var1->serial."'".',
+												'."'".$var1->fecha_send_prov."'".',
+												'."'".$var1->valor."'".',
 												'."'"."solución: ".$var1->solucion."'".',
 												'."'"."problema: ".$var1->problema."'".')">
 					<span class="glyphicon glyphicon-search"></span></button>
