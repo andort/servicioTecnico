@@ -17,10 +17,15 @@
 	//estado inicial que se le dan a los articulos
 	$estado_gtia = 1;
 	$movimiento = 1;
-	$sede = '';
 	
 	$registro = '';
 	$registro1 = '';
+
+	date_default_timezone_set("America/Bogota");
+	$fecha = date("d-m-Y H:i:s");
+
+	$sede = $_SESSION["sede"];
+	$tecnico = $_SESSION["login"];
 
 
 	//var_dump($_POST['datos_gtia']);
@@ -29,10 +34,12 @@
 	$serv1 = array(
 		'id_tipo_movimiento'=> $movimiento,
 		'id_estado_movimiento'=> $estado_gtia,
-		'cliente'=> $_POST['cliente'],
-		'comentario_cliente'=> $_POST['c_cliente'],
-		'sede'=> $_POST['sede'],
-		'create_by'=> $_POST['tecnico']);
+		'cliente'=> $_POST['value_id_cliente'],
+		'comentario_cliente'=> $_POST['value_comentario_cliente'],
+		'comentario_tecnico'=> $_POST['value_comentario_tecnico'],
+		'fecha_inicio'=> $fecha,
+		'sede'=> $_POST['value_sede'],
+		'create_by'=> $_POST['value_tecnico']);
 
 		$post = new tb_movimiento($serv1);
 
@@ -45,9 +52,9 @@
 			if($_POST['o_name'] != ''){
 				$serv3 = array(
 				'id_movimiento'=> $registro->id_movimiento,  
-				'n_id_entrada'=> $_POST['o_id'], 
-				'name_entrada'=> $_POST['o_name'],
-				'tel_entrada'=> $_POST['o_movil']);
+				'n_id_entrada'=> $_POST['value_otro_id'], 
+				'name_entrada'=> $_POST['value_otro_name'],
+				'tel_entrada'=> $_POST['value_otro_movil']);
 
 				$post2 = new tb_serv_entrada($serv3);
 
@@ -60,6 +67,7 @@
 
 				$serv2 = array(
 				'id_movimiento'=> $registro->id_movimiento, 
+				'fecha_create'=> $fecha,
 				'serial'=> $value['serial'], 
 				'art'=> $value['art'],
 				'marca'=> $value['marca'],

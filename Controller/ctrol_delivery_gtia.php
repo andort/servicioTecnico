@@ -81,7 +81,7 @@ if (isset($_POST['btnEnviar'])){
 											ON p.id_persona = m.cliente
 											JOIN tb_estado_movimientos e 
 											ON e.id_estado_movimiento = m.id_estado_movimiento
-											WHERE m.id_estado_movimiento > 1 AND m.id_estado_movimiento < 4 && m.id_tipo_movimiento = 1');
+											WHERE /*m.id_estado_movimiento > 1 AND m.id_estado_movimiento < 4*/m.id_estado_movimiento != 2 && m.id_tipo_movimiento = 1');
 	$listar= "";
 	
 	

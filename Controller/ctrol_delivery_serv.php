@@ -17,13 +17,14 @@
 	$txtCtecnico1 = "";
 	$registro1 = "";
 
+	date_default_timezone_set("America/Bogota");
 	$fecha = date("d-m-Y H:i:s");
 
 	
 
 
 	//hacer el listado de los estados
-	$c_Estado = tb_estado_movimiento::all(array('conditions' => 'id_estado_movimiento = "4"'));
+	$c_Estado = tb_estado_movimiento::all(array('conditions' => 'id_estado_movimiento = "2"'));
 	$combo_Estado = "";
 	foreach ($c_Estado as $key => $value){
 		$combo_Estado .= "<option value='".$value->id_estado_movimiento."'>".$value->descripcion."</option>";
@@ -36,28 +37,31 @@
 
 if (isset($_POST['btnEnviar'])){	
 
-	$serv =	tb_movimiento::find('last',array('conditions' => array('id_movimiento = ?',$_POST['txt_id'])));
+	if($_POST['txtRol'] != ""){
 
-	$serv->id_estado_movimiento = $_POST['txtRol'];
-	$serv->fecha_fin = $fecha;
+		$serv =	tb_movimiento::find('last',array('conditions' => array('id_movimiento = ?',$_POST['txt_id'])));
 
-	$serv->save();
-	
-		if($_POST['txt_Rname'] != ""){
-			
-			$ingresar = array(
-				'id_movimiento'=> $_POST['txt_id'],
-				'n_id_salida'=> $_POST['txt_Rid'],
-				'name_salida'=> $_POST['txt_Rname'],
-				'tel_salida'=> $_POST['txt_Rtel']);
-				$post = new tb_serv_salida($ingresar);
+		$serv->id_estado_movimiento = $_POST['txtRol'];
+		$serv->fecha_fin = $fecha;
+
+		$serv->save();
 		
-				if (@$post->save()){
-				}
+			if($_POST['txt_Rname'] != ""){
+				
+				$ingresar = array(
+					'id_movimiento'=> $_POST['txt_id'],
+					'n_id_salida'=> $_POST['txt_Rid'],
+					'name_salida'=> $_POST['txt_Rname'],
+					'tel_salida'=> $_POST['txt_Rtel']);
+					$post = new tb_serv_salida($ingresar);
 			
-			}
-	$registro1 = $_POST['txt_id'];
-	echo "<script> window.open('../View/pdf_rep_serv_entrega.php?registro1=$registro1','','width=920, height=600'); </script>";
+					if (@$post->save()){
+					}
+				
+				}
+		$registro1 = $_POST['txt_id'];
+		echo "<script> window.open('../View/pdf_rep_serv_entrega.php?registro1=$registro1','','width=920, height=600'); </script>";
+	}
 
 		/*if (@$serv->save()){
 
@@ -66,15 +70,6 @@ if (isset($_POST['btnEnviar'])){
 			//mail('destinatario','asunto','textodelcorreo','desdedondeseenvia');
 		}	*/
 	}
-
-
-
-
-
-
-
-
-
 
 
 

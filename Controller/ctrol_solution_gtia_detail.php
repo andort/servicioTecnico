@@ -25,6 +25,7 @@
 	$txtCCliente1 = "";
 	$txtCtecnico1 = "";
 
+	date_default_timezone_set("America/Bogota");
 	$fecha = date("d-m-Y H:i:s");
 	
 	$id_mov = "";
@@ -49,7 +50,7 @@
 	//hacer el listado de los estados de los articulos
 	$c_Estado_art = tb_estado_articulo_cliente::find_by_sql("SELECT descripcion, id_estado_art
 															FROM tb_estado_articulo_clientes
-															WHERE id_estado_art > 1 AND id_estado_art < 5");
+															WHERE id_estado_art = 3 AND id_estado_art < 5");
 	$combo_Estado_art = "";
 	foreach ($c_Estado_art as $key => $value){
 		$combo_Estado_art .= "<option value='".$value->id_estado_art."'>".$value->descripcion."</option>";
@@ -59,7 +60,7 @@
 	//hacer el listado de los estados de los servicios
 	$c_Estado = tb_estado_movimiento::find_by_sql("SELECT descripcion, id_estado_movimiento
 															FROM tb_estado_movimientos
-															WHERE id_estado_movimiento > 1 AND id_estado_movimiento < 4");
+															WHERE id_estado_movimiento = 3 /*AND id_estado_movimiento < 4*/");
 	$combo_Estado = "";
 	foreach ($c_Estado as $key => $value){
 		$combo_Estado .= "<option value='".$value->id_estado_movimiento."'>".$value->descripcion."</option>";

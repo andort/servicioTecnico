@@ -19,6 +19,8 @@
 	include '../Model/tb_tipo_movimiento.php';
 
 
+	date_default_timezone_set("America/Bogota");
+	$fecha = date("d-m-Y H:i:s");
 	
 	
 	$sede = '';
@@ -52,6 +54,7 @@
 			'comentario_cliente'=> $_POST['txtObserv_cliente'],
 			'comentario_tecnico'=> $_POST['txtObserv_tecnico'],
 			'create_by'=> $_POST['txtTecnico'],
+			'fecha_inicio'=> $fecha,
 			'sede'=> $_POST['txtSede']);
 
 			$post = new tb_movimiento($serv1);

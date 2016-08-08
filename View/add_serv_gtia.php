@@ -94,8 +94,8 @@
             <div class="col-lg-4">
                 <div class="form-group">
                 <div class="col-lg-12">
-                <input type="text" name="txtSede" style="display:none" value='<?php echo $_SESSION["sede"] ?>'>
-                <input type="text" name="txtTecnico" style="display:none" value='<?php echo $_SESSION["login"] ?>'>
+                <input type="text" name="txtSede" id="txtSede" style="display:none" value='<?php echo $_SESSION["sede"] ?>'>
+                <input type="text" name="txtTecnico" id="txtTecnico" style="display:none" value='<?php echo $_SESSION["login"] ?>'> 
                 <select class="btn-block" name="txtId" id="txtId" onchange="DatosClientes()" parsley-required="true">
                 <option value="">Seleccione Nro. Identidad Cliente...</option>
                     <?php echo $combo_NroId?>
@@ -676,14 +676,14 @@
             
             } else {
 
-				cliente = $('#txtId').val();
-				c_cliente = $('#txtObserv_cliente').val();
-				c_tecnico = $('#txtObserv_tecnico').val();
-				sede = $('#txtSede').val();
-				tecnico = $('#txtTecnico').val();				
-				o_name = $('#txtName_otro').val();
-				o_id = $('#txtId_otro').val();
-				o_movil = $('#txtMovil_otro').val();
+				val_id_cliente = $('#txtId').val();
+				val_comentario_cliente = $('#txtObserv_cliente').val();
+				val_comentario_tecnico = $('#txtObserv_tecnico').val();
+				val_sede = $('#txtSede').val();
+				val_tecnico = $('#txtTecnico').val();				
+				val_otro_name = $('#txtName_otro').val();
+				val_otro_id = $('#txtId_otro').val();
+				val_otro_movil = $('#txtMovil_otro').val();
 				
 	
 				array = [];
@@ -709,14 +709,14 @@
 				dataType:'html',
 				url:'ctrol_addgarantias.php',
 				data:{'datos_gtia':array,
-				'cliente':cliente,
-				'c_cliente':c_cliente,
-				'c_tecnico':c_tecnico,
-				'sede':sede,
-				'tecnico':tecnico,
-				'o_name':o_name,
-				'o_id':o_id,
-				'o_movil':o_movil}
+				'value_id_cliente':val_id_cliente,
+				'value_comentario_cliente':val_comentario_cliente,
+				'value_comentario_tecnico':val_comentario_tecnico,
+				'value_sede':val_sede,
+				'value_tecnico':val_tecnico,
+				'value_otro_name':val_otro_name,
+				'value_otro_id':val_otro_id,
+				'value_otro_movil':val_otro_movil}
 	
 				}).done(function(preload_data){
 				if (preload_data != 0) {                    
