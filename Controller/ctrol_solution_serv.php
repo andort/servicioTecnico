@@ -75,7 +75,13 @@
 			$listar .= "<td class='small'>".$var1->comentario_tecnico."</td>";							
 			$listar .= '<td class="small"><form method="POST">
 						<input type="hidden" id="txtDelet" name="txtDelet" value="'.$var1->id_movimiento.'">
-						<button type="submit" class="btn btn-success btn-sm" id="Btn_Find" data-toggle="modal" data-target="#modal_AddArt" onclick="llevar_datos_modal('."'".$var1->id_movimiento."'".','."'"."Creado: ".$var1->fecha_inicio."'".','."'"."Cliente: ".$var1->nombres." ".$var1->apellidos."'".','."'"."tel: ".$var1->telefono." - ".$var1->celular."'".','."'"."Comentario Cliente: ".$var1->comentario_cliente."'".','."'"."Comentario Técnico: ".$var1->comentario_tecnico."'".')">
+						<button type="submit" class="btn btn-success btn-sm" id="Btn_Find" data-toggle="modal" data-target="#modal_AddArt" onclick="llevar_datos_modal(
+						'."'".$var1->id_movimiento."'".',
+						'."'"."Creado: ".$var1->fecha_inicio."'".',
+						'."'"."Cliente: ".$var1->nombres." ".$var1->apellidos."'".',
+						'."'"."Tel: ".$var1->telefono." - ".$var1->celular."'".',
+						'."'"."Comentario Cliente: ".$var1->comentario_cliente."'".',
+						'."'"."Comentario Técnico: ".$var1->comentario_tecnico."'".')">
 						<span class="glyphicon glyphicon-search"></span></button>
 						</form></td>';	
 			$listar .= "</tr>";

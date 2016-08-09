@@ -100,16 +100,16 @@
 		<div class="panel-body"> <!--  Inicio BODY -->
 			<div class="row">
                 <div class="col-lg-4">
-                    <span class="text-primary">Cliente o Empresa: </span><span><?php echo $name; ?></span><br>
-                    <span class="text-primary">Dirección: </span><span><?php echo $addres; ?></span><br>	
+                    <span class=""><B>Cliente o Empresa: </B></span><span><?php echo $name; ?></span><br>
+                    <span class=""><B>Dirección: </B></span><span><?php echo $addres; ?></span><br>	
                 </div>
                 <div class="row col-lg-4">
-                    <span class="text-primary">Numero de Id o Nit: </span><span><?php echo $id_persona; ?></span><br>
-                    <span class="text-primary">Tel - Cel: </span><span><?php echo $number; ?></span><br>	
+                    <span class=""><B>Numero de Id o Nit: </B></span><span><?php echo $id_persona; ?></span><br>
+                    <span class=""><B>Tel - Cel: </B></span><span><?php echo $number; ?></span><br>	
                 </div>
                 <div class="row col-lg-4">
-                    <span class="text-primary">Email: </span><span><?php echo $email; ?></span><br>
-                    <span class="text-primary">Fecha Creación: </span><span><?php echo $date_create; ?></span><br>
+                    <span class=""><B>Email: </B></span><span><?php echo $email; ?></span><br>
+                    <span class=""><B>Fecha Creación: </B></span><span><?php echo $date_create; ?></span><br>
                 </div>
             </div>
             
@@ -126,11 +126,11 @@
               <table id="table_id" class="display" cellspacing="0" width="100%">
                 <thead>
                   <tr>
-                    <th class="small">Serial</th>
+                    <th class="small">Estado</th>
                     <th class="small">Articulo</th>
                     <th class="small">Marca - Ref.</th>
                     <th class="small">Proveedor</th>
-                    <th class="small">problema</th>            
+                    <th class="small">Problema</th>            
                     <th class="small">Opcion</th>  
                   </tr>
                 </thead>
@@ -138,33 +138,27 @@
                     <?php echo $listar;?>
                 </tbody>
               </table>
-            </div>
+            </div>  
             <!-- Fin Table 01 -->
             
             
             <div class="row"><br>
             
-        	<div class="col-lg-4">
-                <span class="text-primary">Observaciones Cliente: </span><span><?php echo $o_cliente; ?></span><br>
-                <span class="text-primary">Observaciones Técnico: </span><span><?php echo $o_tecnico; ?></span><br>
-                <span class="text-primary">Solucion: </span><span><?php echo $o_solucion; ?></span><br>
+        	<div class="col-lg-8">
+                <span class=""><B>Observaciones Cliente: </B></span><span><?php echo $o_cliente; ?></span><br><br>
+                <span class=""><B>Observaciones Técnico: </B></span><span><?php echo $o_tecnico; ?></span><br><br>
+                <span class=""><B>Solución: </B></span><span><?php echo $o_solucion; ?></span><br>
             </div>
             
+            
             <div class="row col-lg-4">
-            	   
                 <div class="form-group">
                 <div class="col-lg-12">
                 <span class="text-primary">Estado Actual: </span><span><?php echo $estado; ?></span><br>
                 <select type="text" class="form-control input-sm" name="txtEstadoServ" id="txtEstadoServ" parsley-required="true">
-                <option value="">Seleccione Nuevo Estado...</option>;
-                <?php echo $combo_Estado ?>
-                </select>
-                </div></div>
-            </div>
-            
-            <div class="row col-lg-4">
-                <div class="form-group">
-                <div class="col-lg-12">
+                    <option value="">Seleccione Nuevo Estado...</option>;
+                    <?php echo $combo_Estado ?>
+                </select><br />
                 <textarea class="form-control input-sm" rows="2" name="txtSolucionServ"  id="txtSolucionServ" placeholder="Comentario Solución..." style="resize:none;"></textarea>
                 </div></div>  
             </div>

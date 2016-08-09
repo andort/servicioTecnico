@@ -22,6 +22,7 @@
 	$txtCCliente1 = "";
 	$txtCtecnico1 = "";
 
+	date_default_timezone_set("America/Bogota");
 	$fecha = date("d-m-Y H:i:s");
 	$referencia = "";
 
@@ -34,10 +35,6 @@
 	foreach ($c_Estado as $key => $value){
 		$combo_Estado .= "<option value='".$value->id_estado_movimiento."'>".$value->descripcion."</option>";
 		}
-
-
-
-
 
 
 if (isset($_POST['btnEnviar'])){	
@@ -102,7 +99,11 @@ if (isset($_POST['btnEnviar'])){
 			
 		}
 
-
+if(isset($_GET["registro"]))
+{
+	$parametro = $_GET['registro'];
+	echo "<script> window.open('../View/pdf_rep_gtia_entrega.php?registro1=$parametro','','width=910, height=580'); </script>";
+}
 
 	
 	include '../View/delivery_gtia.php';

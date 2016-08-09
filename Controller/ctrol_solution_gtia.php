@@ -22,6 +22,7 @@
 	$txtCCliente1 = "";
 	$txtCtecnico1 = "";
 	
+	date_default_timezone_set("America/Bogota");
 	$fecha = date("d-m-Y H:i:s");
 	$referencia = "";
 	
@@ -76,13 +77,20 @@ if (isset($_POST['btnEnviar'])){
 	//$mostrar = tb_movimiento::all(array('conditions' => 'id_estado_movimiento = "1"'));
 	//$mostrar1 = tb_persona::find('all');
 
-	$mostrar = tb_movimiento::find_by_sql('SELECT m.id_movimiento, m.fecha_inicio, p.nombres, p.apellidos, p.id_persona, m.comentario_cliente, m.comentario_tecnico, e.descripcion
+	$mostrar = tb_movimiento::find_by_sql('SELECT m.id_movimiento, m.fecha_inicio, p.nombres, p.apellidos, p.id_persona, m.comentario_cliente, m.comentario_tecnico, e.descripcion, replace(group_concat("- ", ar.articulo),",","<br />") as articulo
 											FROM tb_movimientos m
 											JOIN tb_personas p 
 											ON p.id_persona = m.cliente
 											JOIN tb_estado_movimientos e 
 											ON e.id_estado_movimiento = m.id_estado_movimiento
-											WHERE m.id_estado_movimiento = 1 && m.id_tipo_movimiento = 1');
+											JOIN tb_articulos a 
+											ON a.id_movimiento = m.id_movimiento
+											JOIN tb_art ar
+											ON ar.id = a.art
+											JOIN tb_marca mar
+											ON mar.id = a.marca
+											WHERE m.id_estado_movimiento = 1 && m.id_tipo_movimiento = 1
+GROUP BY m.id_movimiento');
 	$listar= "";
 	
 	
@@ -91,9 +99,8 @@ if (isset($_POST['btnEnviar'])){
 			$listar .= "<tr>";
 			$listar .= "<td class='small'>".$var1->id_movimiento."</td>";
 			$listar .= "<td class='small'>".$var1->fecha_inicio."</td>";
-			$listar .= "<td class='small'>".$var1->nombres." ".$var1->apellidos."</td>";
-			$listar .= "<td class='small'>".$var1->id_persona."</td>";
-			$listar .= "<td class='small'>".$var1->descripcion."</td>";
+			$listar .= "<td class='small'>".$var1->nombres." ".$var1->apellidos."<BR />".$var1->id_persona."</td>";
+			$listar .= "<td class='small'>".$var1->articulo."</td>";
 			$listar .= "<td class='small'>".$var1->comentario_cliente."</td>";						
 			$listar .= '<td class="small">
 						<input type="hidden" id="txtDelet" name="txtDelet" value="'.$var1->id_movimiento.'">

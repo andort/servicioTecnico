@@ -149,10 +149,10 @@
 
 		foreach($mostrar as $var1){
 			$desicion_art = $var1->estado;
-			if($desicion_art == 5){
+			if($desicion_art == 3 || $desicion_art == 5){
 				$listar .= "<tr>";
-				$listar .= "<td class='font_small2'>".$var1->serial."</td>";
-				$listar .= "<td class='font_small2'>".$var1->articulo."</td>";
+				$listar .= "<td class='font_small2'>".$var1->descripcion."</td>";
+				$listar .= "<td class='font_small2'>".$var1->articulo."<BR/>".$var1->serial."</td>";
 				$listar .= "<td class='font_small2'>".$var1->marca_art." - ".$var1->ref."</td>";
 				$listar .= "<td class='font_small2'>".$var1->proveedor." - ".$var1->fecha_prov."</td>";			
 				$listar .= "<td class='font_small2'>".$var1->problema."</td>";
@@ -166,8 +166,8 @@
 				
 				}else{
 				$listar .= "<tr>";
-				$listar .= "<td class='font_small2'>".$var1->serial."</td>";
-				$listar .= "<td class='font_small2'>".$var1->articulo."</td>";
+				$listar .= "<td class='font_small2'>".$var1->descripcion."</td>";
+				$listar .= "<td class='font_small2'>".$var1->articulo."<BR/>".$var1->serial."</td>";
 				$listar .= "<td class='font_small2'>".$var1->marca_art." - ".$var1->ref."</td>";
 				$listar .= "<td class='font_small2'>".$var1->proveedor." - ".$var1->fecha_prov."</td>";			
 				$listar .= "<td class='font_small2'>".$var1->problema."</td>";

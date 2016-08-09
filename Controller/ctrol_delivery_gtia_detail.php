@@ -25,6 +25,7 @@
 	$txtCCliente1 = "";
 	$txtCtecnico1 = "";
 
+	date_default_timezone_set("America/Bogota");
 	$fecha = date("d-m-Y H:i:s");
 	
 	$id_mov = "";
@@ -105,8 +106,8 @@
 			$serv->id_estado_movimiento = $_POST['txtEstadoServ'];
 			$serv->fecha_fin = $fecha;
 			$serv->save();
-			echo "<script> window.open('../View/pdf_rep_gtia_entrega.php?registro1=$registro1','','width=910, height=580'); </script>";
-			//header("location: ctrol_delivery_gtia.php");
+			//echo "<script> window.open('../View/pdf_rep_gtia_entrega.php?registro1=$registro1','','width=910, height=580'); </script>";
+			header("location: ctrol_delivery_gtia.php?registro=$registro1");
 			
 			/*echo "<script>	alert('Se Modifico SERVICIO TÉCNICO con Exito'); </script>";*/
 			}
