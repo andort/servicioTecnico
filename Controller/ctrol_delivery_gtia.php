@@ -72,7 +72,8 @@ if (isset($_POST['btnEnviar'])){
 	//$mostrar = tb_movimiento::all(array('conditions' => 'id_estado_movimiento = "1"'));
 	//$mostrar1 = tb_persona::find('all');
 
-	$mostrar = tb_movimiento::find_by_sql('SELECT m.id_movimiento, m.fecha_inicio, p.nombres, p.apellidos, p.id_persona, m.comentario_cliente, m.comentario_tecnico, e.descripcion
+	$mostrar = tb_movimiento::find_by_sql('SELECT m.id_movimiento, m.fecha_inicio, m.fecha_solucion
+		, p.nombres, p.apellidos, p.id_persona, m.comentario_cliente, m.comentario_solucion, m.comentario_tecnico, e.descripcion
 											FROM tb_movimientos m
 											JOIN tb_personas p 
 											ON p.id_persona = m.cliente
@@ -86,11 +87,11 @@ if (isset($_POST['btnEnviar'])){
 			$referencia = $var1->id_movimiento;
 			$listar .= "<tr>";
 			$listar .= "<td class='small'>".$var1->id_movimiento."</td>";
-			$listar .= "<td class='small'>".$var1->fecha_inicio."</td>";
-			$listar .= "<td class='small'>".$var1->nombres." ".$var1->apellidos."</td>";
-			$listar .= "<td class='small'>".$var1->id_persona."</td>";
 			$listar .= "<td class='small'>".$var1->descripcion."</td>";
-			$listar .= "<td class='small'>".$var1->comentario_cliente."</td>";						
+			$listar .= "<td class='small' width=15%>"."Creación: ".$var1->fecha_inicio."<br/>Solución: ".$var1->fecha_solucion."</td>";
+			$listar .= "<td class='small' width=15%>".$var1->nombres." ".$var1->apellidos."<br/>Id/Nit: ".$var1->id_persona."</td>";
+			$listar .= "<td class='small' width=25%>".$var1->comentario_cliente."</td>";						
+			$listar .= "<td class='small' width=25%>".$var1->comentario_solucion."</td>";
 			$listar .= '<td class="small text-center">
 						<input type="hidden" id="txtDelet" name="txtDelet" value="'.$var1->id_movimiento.'">
 						<a href="ctrol_delivery_gtia_detail.php?referencia='.$referencia.'" class="btn btn-danger btn-sm"><span class="glyphicon glyphicon-edit"></span></a>

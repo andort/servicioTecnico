@@ -152,11 +152,11 @@
 			if($desicion_art == 3 || $desicion_art == 5){
 				$listar .= "<tr>";
 				$listar .= "<td class='font_small2'>".$var1->descripcion."</td>";
-				$listar .= "<td class='font_small2'>".$var1->articulo."<BR/>".$var1->serial."</td>";
-				$listar .= "<td class='font_small2'>".$var1->marca_art." - ".$var1->ref."</td>";
-				$listar .= "<td class='font_small2'>".$var1->proveedor." - ".$var1->fecha_prov."</td>";			
+				$listar .= "<td class='font_small2'>".$var1->articulo."<BR/>s/n: ".$var1->serial."</td>";
+				$listar .= "<td class='font_small2'>".$var1->marca_art."<BR/>Ref: ".$var1->ref."</td>";
+				$listar .= "<td class='font_small2 text-center'>".$var1->proveedor."<BR/>".$var1->fecha_prov."</td>";			
 				$listar .= "<td class='font_small2'>".$var1->problema."</td>";
-				$listar .= '<td class="small"><form method="POST">
+				$listar .= '<td class="small text-center"><form method="POST">
 						<input type="hidden" id="txtDelet" name="txtDelet" value="'.$var1->id_articulo.'">
 						<button type="submit" class="btn btn-warning btn-sm" id="Btn_Find" disabled="disabled">
 						<span class="glyphicon glyphicon-ok"></span></button>
@@ -169,9 +169,9 @@
 				$listar .= "<td class='font_small2'>".$var1->descripcion."</td>";
 				$listar .= "<td class='font_small2'>".$var1->articulo."<BR/>".$var1->serial."</td>";
 				$listar .= "<td class='font_small2'>".$var1->marca_art." - ".$var1->ref."</td>";
-				$listar .= "<td class='font_small2'>".$var1->proveedor." - ".$var1->fecha_prov."</td>";			
+				$listar .= "<td class='font_small2 text-center'>".$var1->proveedor." - ".$var1->fecha_prov."</td>";			
 				$listar .= "<td class='font_small2'>".$var1->problema."</td>";
-				$listar .= '<td class="small"><form method="POST">
+				$listar .= '<td class="small text-center"><form method="POST">
 						<input type="hidden" id="txtDelet" name="txtDelet" value="'.$var1->id_articulo.'">
 						<button type="submit" class="btn btn-success btn-sm" id="Btn_Find" data-toggle="modal" data-target="#modal_AddArt" onclick="llevar_datos_modal('."'".$var1->id_articulo."'".','."'"."serial: ".$var1->serial."'".','."'"."articulo: ".$var1->articulo."'".','."'"."marca - Ref: ".$var1->marca_art." - ".$var1->ref."'".','."'"."Proveedor: ".$var1->proveedor." - ".$var1->fecha_prov."'".','."'"."Estado Actual: ".$var1->descripcion."'".','."'"."Comentario Cliente: ".$var1->problema."'".','."'"."Comentario Técnico: ".$var1->observacion."'".','."'"."Solución: ".$var1->solucion."'".')">
 						<span class="glyphicon glyphicon-plus-sign"></span></button>

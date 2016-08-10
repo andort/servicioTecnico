@@ -84,24 +84,10 @@
             <div class="row">
                 <div class="col-lg-8">
                     <input type="text" name="txtId_mov" id="txtId_mov" style="display:none" value='<?php echo $id_mov ?>'>
-                    <h5><span class="glyphicon glyphicon-new-window"></span>&nbsp;&nbsp;&nbsp;&nbsp;Entrega de Garantía - Detalle - Nro: <?php echo $id_mov ?></h5>
+                    <h5><span class="glyphicon glyphicon-new-window"></span>&nbsp;&nbsp;&nbsp;&nbsp;Entrega de Garantía</h5>
                 </div>
                 <div class="col-lg-4 text-center">
-                    <h5></h5>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-lg-4">
-                    <span class="text-danger">Cliente o Empresa: </span><span><?php echo $name; ?></span><br>
-                    <span class="text-danger">Dirección: </span><span><?php echo $addres; ?></span><br>	
-                </div>
-                <div class="row col-lg-4">
-                    <span class="text-danger">Numero de Id o Nit: </span><span><?php echo $id_persona; ?></span><br>
-                    <span class="text-danger">Tel - Cel: </span><span><?php echo $number; ?></span><br>	
-                </div>
-                <div class="row col-lg-4">
-                    <span class="text-danger">Email: </span><span><?php echo $email; ?></span><br>
-                    <span class="text-danger">Fecha Creación: </span><span><?php echo $date_create; ?></span><br>
+                    <h5>Nro: <?php echo $id_mov ?></h5>
                 </div>
             </div>
         </div>
@@ -112,6 +98,28 @@
 
      
 		<div class="panel-body"> <!--  Inicio BODY -->
+
+            <div class="row">
+                <div class="col-lg-4">
+                    <span class=""><b>Cliente o Empresa: </b></span><span><?php echo $name; ?></span><br>
+                    <span class=""><b>Dirección: </b></span><span><?php echo $addres; ?></span><br> 
+                </div>
+                <div class="row col-lg-4">
+                    <span class=""><b>Numero de Id o Nit: </b></span><span><?php echo $id_persona; ?></span><br>
+                    <span class=""><b>Tel - Cel: </b></span><span><?php echo $number; ?></span><br> 
+                </div>
+                <div class="row col-lg-4">
+                    <span class=""><b>Email: </b></span><span><?php echo $email; ?></span><br>
+                    <span class=""><b>Fecha Creación: </b></span><span><?php echo $date_create; ?></span><br>
+                </div>
+            </div>
+
+            <div class="row ">
+                <br>
+                <div class="col-lg-12 border_bot">
+                </div>
+                <br>
+            </div>
 			
  
             <!-- Table -->
@@ -136,35 +144,38 @@
             
             
             <div class="row"><br>
-            
-        	<div class="col-lg-4">
-            <div class="panel panel-primary">
-            <div class="panel-heading">
-            <span class="">Estado Actual: </span><span><?php echo $estado; ?></span><br>
-            </div>
-            <div class="panel-body">
-                
-            	   
-                <div class="form-group">
-                
-                <select type="text" class="form-control input-sm" name="txtEstadoServ" id="txtEstadoServ" parsley-required="true">
-                <option value="">Seleccione Nuevo Estado...</option>;
-                <?php echo $combo_Estado ?>
-                </select>
+
+                <div class="col-lg-8">
+                    <span class=""><B>Observaciones Cliente: </B></span><span><?php echo $o_cliente; ?></span><br><br>
+                    <span class=""><B>Observaciones Técnico: </B></span><span><?php echo $o_tecnico; ?></span><br><br>
+                    <span class=""><B>Solución: </B></span><span><?php echo $o_solucion; ?></span><br>
                 </div>
-                
+
+                <div class="row col-lg-4">
+                    <div class="form-group">
+                    <div class="col-lg-12">
+                        <span class="text-primary">Estado Actual: </span><span><?php echo $estado; ?></span><br>
+                        <select type="text" class="form-control input-sm" name="txtEstadoServ" id="txtEstadoServ" parsley-required="true">
+                            <option value="">Seleccione Nuevo Estado...</option>;
+                            <?php echo $combo_Estado ?>
+                        </select><br />
+                        <label>
+                            <input type="checkbox" checked="checked" name="selec" id="selec" onchange="DatosCliente()"> Servicio hecho por cliente factura
+                        </label>
+
+                    </div>
+                    </div>  
+                </div>
             </div>
-            </div>
-            </div>
-            
-            <div class="row col-lg-8">
-            <div class="panel panel-primary">
-            <div class="panel-heading">
-            Si el Servicio es Recogido Por Alguien Distinto, llene los campos:
-            </div>
-            <div class="panel-body">
-            	<div class="row">
-                	<div class="col-lg-4">
+
+
+            <!--  INICIO DIV GESTOR DEL SERVICIO -->
+            <!--  INICIO DIV GESTOR DEL SERVICIO -->
+            <div class="panel panel-danger class_padding" id="Gserv" hidden=""> <!--  Inicio Panel --> 
+            <div class="panel-body class_padding"> <!--  Inicio BODY -->
+                 
+                <div class="row">
+                    <div class="col-lg-4">
                     <div class="form-group">
                     <input  type="text" class="form-control input-sm" name="txt_Rname" id="txt_Rname" placeholder="Nombre">
                     </div>
@@ -181,20 +192,12 @@
                     <input  type="text" class="form-control input-sm" name="txt_Rtel" id="txt_Rtel" placeholder="Tel o Cel">
                     </div>
                     </div>
-                </div>
-            	
-                                 
-            </div>
-            </div>
-            </div>
+                </div>          
             
             </div>
-            
-            <div class="row">
-            <div class="col-lg-12">
-            	<span class="text-primary">Solucion: </span><span><?php echo $o_solucion; ?></span>
-            </div>
-            </div>
+            </div>   
+            <!--  FIN DIV GESTOR DEL SERVICIO -->
+            <!--  FIN DIV GESTOR DEL SERVICIO -->
             
 		</div> <!--  Fin PANEL BODY --> 
         
@@ -236,169 +239,136 @@
 
 <!-- INICIO Modal SOLUCION SERVICIO -->
 <!-- INICIO Modal SOLUCION SERVICIO -->
- <div class="modal fade" id="modal_AddArt" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal fade" id="modal_AddArt" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
     <form id="form2" role="form" method="post">
       <div class="modal-lg">
         <div class="modal-content">
+          <div class="modal-header">
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+              </button>
+              <h4 class="modal-title">Solucion Articulo</h4>
+          </div>
           <div class="modal-body">
 
-            <div class="panel panel-primary"> <!--  Inicio PANEL --> 
-            <div class="panel-heading small">
-            	<div class="row class_topborder">
-                <div class="col-lg-4">
-                    <h5><span class="glyphicon glyphicon-th-large"></span>&nbsp;&nbsp;&nbsp;Solucion Articulo - Nro: </h5>
-                </div>
-                <div class="col-lg-4">
-                	<div class="form-group">
-                    <input  type="text" class="form-control input-sm" name="txt_id" id="txt_id" readonly="readonly">
+            <!-- articulo malo que trajo el cliente -->
+            <div class="col-lg-6">
+              <div class="panel panel-default">
+                <div class="panel-heading">Articulo en garantía</div>
+                <div class="panel-body">
+                    <div class="col-lg-12">
+                      <div class="form-group">
+                        <input  type="text" class="form-control input-sm" name="txt_id" id="txt_id" readonly="readonly">
+                      </div>
                     </div>
-                </div>
-                <div class="col-lg-4">
-                	<div class="form-group">
-                    <input  type="text" class="form-control input-sm" name="txt_serial" id="txt_serial" readonly="readonly">
+                    <div class="col-lg-12">
+                      <div class="form-group">
+                        <input  type="text" class="form-control input-sm" name="txt_serial" id="txt_serial" readonly="readonly">
+                      </div>
                     </div>
-                </div>
-            	</div>
-                
-                <div class="row">
-                <div class="col-lg-4">
-                    <div class="form-group">
-                    <input  type="text" class="form-control input-sm"name="txt_art" id="txt_art" readonly="readonly">
+                    <div class="col-lg-12">
+                      <div class="form-group">
+                        <input  type="text" class="form-control input-sm"name="txt_art" id="txt_art" readonly="readonly">
+                      </div>
                     </div>
-                </div>
-                <div class="col-lg-4">
-                    <div class="form-group">
-                    <input  type="text" class="form-control input-sm"name="txt_marca" id="txt_marca" readonly="readonly">
+                    <div class="col-lg-12">
+                      <div class="form-group">
+                        <input  type="text" class="form-control input-sm"name="txt_marca" id="txt_marca" readonly="readonly">
+                      </div>
                     </div>
-                </div>
-                <div class="col-lg-4">
-                    <div class="form-group">
-                    <input  type="text" class="form-control input-sm" name="txt_prov" id="txt_prov" readonly="readonly">
+                    <div class="col-lg-12">
+                      <div class="form-group">
+                        <input  type="text" class="form-control input-sm" name="txt_prov" id="txt_prov" readonly="readonly">
+                      </div>
                     </div>
+                    <div class="col-lg-12">
+                      <div class="form-group">
+                        <textarea class="form-control input-sm" rows="4" id="txt_c1" readonly="readonly" style="resize:none;"></textarea>
+                      </div>
+                    </div>
+                    <div class="col-lg-12">                 
+                      <div class="form-group">
+                        <textarea class="form-control input-sm" rows="4" id="txt_c3" readonly="readonly" style="resize:none;"></textarea>
+                      </div>
+                    </div>        
                 </div>
+              </div>
+
             </div>
 
-            </div> <!--  FIN PANEL HEADER --> 
-            
-            <div class="panel-body"> <!--  Inicio BODY --> 
+            <!-- articulo malo que trajo el cliente -->
+            <div class="col-lg-6">
+              <div class="panel panel-danger">
+                <div class="panel-heading">Articulo cambio</div>
+                <div class="panel-body">
+                    <div class="col-lg-12">
+                      <div class="form-group">
+                      <select class="btn-block" name="txtArt" id="txtArt">
+                      <option>Seleccionar Artículo...</option>
+                      <?php echo $combo_art?>
+                      </select>
+                      </div>
+                    </div>
+                    <div class="col-lg-12">
+                        <div class="form-group">
+                        <select class="btn-block" name="txtMarca" id="txtMarca">
+                        <option>Seleccionar Marca...</option>
+                        <?php echo $combo_marca?>
+                        </select>
+                        </div>
+                    </div>
+                    <div class="col-lg-12">
+                        <div class="form-group">
+                        <input  type="text" class="form-control input-sm" placeholder="Referencia" name="txtRef" id="txtRef">
+                        </div>
+                    </div>
+                    <div class="col-lg-12">
+                        <div class="form-group">
+                        <select class="btn-block" name="txtProv" id="txtProv">
+                        <option>Seleccionar Proveedor...</option>
+                        <?php echo $combo_prov?>
+                        </select>
+                        </div>
+                    </div>
+                    <div class="col-lg-12">
+                        <div class="form-group">
+                        <input  type="date" class="form-control input-sm" placeholder="Fecha Proveedor" name="txtFprov" id="txtFprov">
+                        </div>
+                    </div>
+                    <div class="col-lg-12">
+                        <div class="form-group">
+                        <input  type="text" class="form-control input-sm" placeholder="Ingrese Serial" name="txtSerial" id="txtSerial">
+                        </div>
+                    </div>
+                </div>
+              </div>
 
-                <div class="row">
-                
-                <div class="col-lg-4">
-                <div class="form-group">
-                <textarea class="form-control input-sm" rows="4" id="txt_c1" readonly="readonly" style="resize:none;"></textarea>
-                </div></div>
-                            
-                <div class="col-lg-4">                 
-                <div class="form-group">
-                <textarea class="form-control input-sm" rows="4" id="txt_c3" readonly="readonly" style="resize:none;"></textarea>
-                </div></div>                  
-                
-                <div class="col-lg-4">
-                <div class="form-group">
-                <input  type="text" class="form-control input-sm" name="txt_est" id="txt_est" readonly="readonly">
-                </div>
-                
-                <div class="form-group">
-                <select type="text" class="form-control input-sm" name="txtRol" id="txtRol" parsley-required="true">
-                <option value="">Seleccione Nuevo Estado...</option>;
-                <?php echo $combo_Estado_art ?>
-                </select>
-                </div>                  
-                </div>
-                
-                </div>
-                
-                
-                <div class="row">
+              <div class="row">
                 <div class="col-lg-12">
-                	<div class="panel panel-danger">
-                        <div class="panel-heading">
-                        Se cambia Artículo Por:
-                        </div>
-                        <div class="panel-body">
-                        	<div class="row">
-                                <div class="col-lg-4">
-                                    <div class="form-group">
-                                    <select class="btn-block" name="txtArt" id="txtArt">
-                                    <option>Seleccionar Artículo...</option>
-                                    <?php echo $combo_art?>
-                                    </select>
-                                    </div>
-                                </div>
-                                <div class="col-lg-4">
-                                    <div class="form-group">
-                                    <select class="btn-block" name="txtMarca" id="txtMarca">
-                                    <option>Seleccionar Marca...</option>
-                                    <?php echo $combo_marca?>
-                                    </select>
-                                    </div>
-                                </div>
-                                <div class="col-lg-4">
-                                    <div class="form-group">
-                                    <input  type="text" class="form-control input-sm" placeholder="Referencia" name="txtRef" id="txtRef">
-                                    </div>
-                                </div>
-                            </div>
-                
-                            
-                            <div class="row">
-                                <div class="col-lg-4">
-                                    <div class="form-group">
-                                    <select class="btn-block" name="txtProv" id="txtProv">
-                                    <option>Seleccionar Proveedor...</option>
-                                    <?php echo $combo_prov?>
-                                    </select>
-                                    </div>
-                                </div>
-                                <div class="col-lg-4">
-                                    <div class="form-group">
-                                    <input  type="date" class="form-control input-sm" placeholder="Fecha Proveedor" name="txtFprov" id="txtFprov">
-                                    </div>
-                                </div>
-                                <div class="col-lg-4">
-                                    <div class="form-group">
-                                    <input  type="text" class="form-control input-sm" placeholder="Ingrese Serial" name="txtSerial" id="txtSerial">
-                                    </div>
-                                </div>
-                            </div>
-            
-                        </div>
-                    </div>
-                </div>
+                  <input  type="text" class="form-control input-sm" name="txt_est" id="txt_est" readonly="readonly">
+                </div><br />
+
+                <div class="col-lg-12">
+                  <select type="text" class="form-control input-sm" name="txtRol" id="txtRol" parsley-required="true">
+                    <option value="">Seleccione Nuevo Estado...</option>;
+                    <?php echo $combo_Estado_art ?>
+                  </select>
                 </div>
 
-            </div> <!--  FIN BODY -->
-            
-            <div class="panel-footer"><!--  INICIO FOOTER -->
-            <div class="row">
-                <div class="col-lg-4">
-                    <div class="form-group">
-                    
-					</div>
-                </div>
-                <div class="col-lg-4">
-                    <div class="form-group">
-                    <button type="button" class="btn btn-danger btn-sm btn-block" data-dismiss="modal">Cerrar</button>
-                    </div>
-                </div>
-                <div class="col-lg-4">
-                    <div class="form-group">
-                    <button type="submit" class="btn btn-primary btn-sm btn-block" name="btnEnviar" id="btnEnviar">Solucion Servicio</button>
-                    </div>
-                </div>
-            </div> 
-            
-            </div> <!--  FIN FOOTER -->
-            </div> <!--  FIN PANEL --> 
-                
-               
-
+              </div>
             </div>
+              
+
+          </div>
+          <div class="modal-footer">
+            <div class="col-lg-4 col-md-offset-8">
+              <button type="submit" class="btn btn-primary btn-sm btn-block" name="btnEnviar" id="btnEnviar">Solucion Servicio</button>
+            </div>
+          </div>
         </div>
       </div>
     </form>
-</div>
+  </div>
 <!-- FIN Modal SOLUCION SERVICIO -->
 <!-- FIN Modal SOLUCION SERVICIO -->
 
@@ -528,15 +498,12 @@
     }
 
 
-
-
-
-    //funcion para Traer Datos De llos Clientes
+    //funcion para pedir Datos gestor del servicio
     function DatosCliente(){
-     if(($("#remove").css("display")== 'none')){
-         $("#remove").css("display","block");
+     if(($("#Gserv").css("display")== 'none')){
+         $("#Gserv").css("display","block");
          }else{
-             $("#remove").css("display","none");
+             $("#Gserv").css("display","none");
              }
         }
     

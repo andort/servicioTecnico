@@ -100,11 +100,11 @@
                 <thead>
                   <tr>
                     <th class="small">Nro Servicio</th>
+                    <th class="small">Estado</th>
                     <th class="small">Fecha</th>
                     <th class="small">Cliente</th>
-                    <th class="small">Id / Nit</th>
-                    <th class="small">Estado</th>
                     <th class="small">Observación Cliente</th>          
+                    <th class="small">Solución</th>
                     <th class="small text-center">Opción</th>  
                   </tr>
                 </thead>

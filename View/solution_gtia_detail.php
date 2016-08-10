@@ -144,24 +144,24 @@
             
             <div class="row"><br>
             
-        	<div class="col-lg-8">
-                <span class=""><B>Observaciones Cliente: </B></span><span><?php echo $o_cliente; ?></span><br><br>
-                <span class=""><B>Observaciones Técnico: </B></span><span><?php echo $o_tecnico; ?></span><br><br>
-                <span class=""><B>Solución: </B></span><span><?php echo $o_solucion; ?></span><br>
-            </div>
-            
-            
-            <div class="row col-lg-4">
-                <div class="form-group">
-                <div class="col-lg-12">
-                <span class="text-primary">Estado Actual: </span><span><?php echo $estado; ?></span><br>
-                <select type="text" class="form-control input-sm" name="txtEstadoServ" id="txtEstadoServ" parsley-required="true">
-                    <option value="">Seleccione Nuevo Estado...</option>;
-                    <?php echo $combo_Estado ?>
-                </select><br />
-                <textarea class="form-control input-sm" rows="2" name="txtSolucionServ"  id="txtSolucionServ" placeholder="Comentario Solución..." style="resize:none;"></textarea>
-                </div></div>  
-            </div>
+            	<div class="col-lg-8">
+                    <span class=""><B>Observaciones Cliente: </B></span><span><?php echo $o_cliente; ?></span><br><br>
+                    <span class=""><B>Observaciones Técnico: </B></span><span><?php echo $o_tecnico; ?></span><br><br>
+                    <span class=""><B>Solución: </B></span><span><?php echo $o_solucion; ?></span><br>
+                </div>
+                
+                
+                <div class="row col-lg-4">
+                    <div class="form-group">
+                    <div class="col-lg-12">
+                    <span class="text-primary">Estado Actual: </span><span><?php echo $estado; ?></span><br>
+                    <select type="text" class="form-control input-sm" name="txtEstadoServ" id="txtEstadoServ" parsley-required="true">
+                        <option value="">Seleccione Nuevo Estado...</option>;
+                        <?php echo $combo_Estado ?>
+                    </select><br />
+                    <textarea class="form-control input-sm" rows="2" name="txtSolucionServ"  id="txtSolucionServ" placeholder="Comentario Solución..." style="resize:none;"></textarea>
+                    </div></div>  
+                </div>
             
             </div>
             
