@@ -256,38 +256,27 @@
               <div class="panel panel-default">
                 <div class="panel-heading">Articulo en garantía</div>
                 <div class="panel-body">
-                    <div class="col-lg-12">
-                      <div class="form-group">
-                        <input  type="text" class="form-control input-sm" name="txt_id" id="txt_id" readonly="readonly">
+                    <div class="col-lg-4">
+                      <div class="form-group text-center">
+                        <small>No. Articulo</small>
+                        <B><span id="txt_id" class=""></span></B>
                       </div>
+                    </div>
+                    <div class="col-lg-8">
+                        <span id="txt_art"></span><br />
+                        <span id="txt_marca"></span> <br />
+                        <span id="txt_serial"></span> <br />
+                        <span id="txt_prov"></span><br /><br />
                     </div>
                     <div class="col-lg-12">
                       <div class="form-group">
-                        <input  type="text" class="form-control input-sm" name="txt_serial" id="txt_serial" readonly="readonly">
-                      </div>
-                    </div>
-                    <div class="col-lg-12">
-                      <div class="form-group">
-                        <input  type="text" class="form-control input-sm"name="txt_art" id="txt_art" readonly="readonly">
-                      </div>
-                    </div>
-                    <div class="col-lg-12">
-                      <div class="form-group">
-                        <input  type="text" class="form-control input-sm"name="txt_marca" id="txt_marca" readonly="readonly">
-                      </div>
-                    </div>
-                    <div class="col-lg-12">
-                      <div class="form-group">
-                        <input  type="text" class="form-control input-sm" name="txt_prov" id="txt_prov" readonly="readonly">
-                      </div>
-                    </div>
-                    <div class="col-lg-12">
-                      <div class="form-group">
+                        <label>Comentario cliente</label>
                         <textarea class="form-control input-sm" rows="4" id="txt_c1" readonly="readonly" style="resize:none;"></textarea>
                       </div>
                     </div>
                     <div class="col-lg-12">                 
                       <div class="form-group">
+                        <label>Solución</label>
                         <textarea class="form-control input-sm" rows="4" id="txt_c3" readonly="readonly" style="resize:none;"></textarea>
                       </div>
                     </div>        
@@ -345,7 +334,7 @@
 
               <div class="row">
                 <div class="col-lg-12">
-                  <input  type="text" class="form-control input-sm" name="txt_est" id="txt_est" readonly="readonly">
+                  <span><b>Estado actial:&nbsp;</b></span><span id="txt_est"></span>
                 </div><br />
 
                 <div class="col-lg-12">
@@ -486,12 +475,12 @@
 
     //funcion para llevar los datos al modal
     function llevar_datos_modal(id, serial, articulo, marca, proveedor, estado, coment1, coment2, coment3){
-        $("#txt_id").val(id);
-        $("#txt_serial").val(serial);
-        $("#txt_art").val(articulo);
-		$("#txt_marca").val(marca);
-        $("#txt_prov").val(proveedor);
-		$("#txt_est").val(estado);
+        $("#txt_id").html(id);
+        $("#txt_serial").html(serial);
+        $("#txt_art").html(articulo);
+		$("#txt_marca").html(marca);
+        $("#txt_prov").html(proveedor);
+		$("#txt_est").html(estado);
         $("#txt_c1").val(coment1);
 		$("#txt_c2").val(coment2);
 		$("#txt_c3").val(coment3);

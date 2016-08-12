@@ -188,18 +188,18 @@
 
                 <div class="row">
 
-                    <div class="col-lg-2 text-center font_big">
+                    <div class="col-lg-2 text-center">
                         <small>No. Articulo.</small>
-                        <B><h1 id="txt_id" class="font_big"></h1></B>
+                        <B><h1 id="txt_id" class=""></h1></B>
                     </div>
 
-                    <div class="col-lg-5 font_big"><br />  
+                    <div class="col-lg-5"><br />  
                         <B><span>Ref: </span></B><span id="txt_referencia"></span><br />
                         <B><span>Marca: </span></B><span id="txt_marca_articulo"></span><br />
                         <B><span>Serial: </span></B><span id="txt_serial"></span>
                     </div>
 
-                    <div class="col-lg-5 font_big"><br />  
+                    <div class="col-lg-5"><br />  
                         <B><span>Fecha Ingreso: </span></B><span id="txt_referencia"></span><br />
                         <B><span>Fecha Envío: </span></B><span id="txt_fecha_envio"></span><br />
                         <B><span>Fecha Resuelto: </span></B><span id="txt_serial"></span>
