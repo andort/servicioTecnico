@@ -50,7 +50,7 @@
 	//hacer el listado de los estados de los articulos
 	$c_Estado_art = tb_estado_articulo_cliente::find_by_sql("SELECT descripcion, id_estado_art
 															FROM tb_estado_articulo_clientes
-															WHERE id_estado_art = 3 AND id_estado_art < 5");
+															WHERE id_estado_art > 1 AND id_estado_art < 5");
 	$combo_Estado_art = "";
 	foreach ($c_Estado_art as $key => $value){
 		$combo_Estado_art .= "<option value='".$value->id_estado_art."'>".$value->descripcion."</option>";
@@ -149,7 +149,7 @@
 
 		foreach($mostrar as $var1){
 			$desicion_art = $var1->estado;
-			if($desicion_art == 3 || $desicion_art == 5){
+			if($desicion_art > 1 /*|| $desicion_art == 5*/){
 				$listar .= "<tr>";
 				$listar .= "<td class='font_small2'>".$var1->descripcion."</td>";
 				$listar .= "<td class='font_small2'>".$var1->articulo."<BR/>s/n: ".$var1->serial."</td>";

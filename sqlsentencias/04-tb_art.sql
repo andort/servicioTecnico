@@ -1,0 +1,46 @@
+
+
+--
+-- Volcado de datos para la tabla `tb_art`
+--
+
+INSERT INTO `tb_art` (`id`, `articulo`) VALUES
+(1, 'Procesador INTEL'),
+(2, 'Procesador AMD'),
+(3, 'Memoria RAM PC'),
+(4, 'Board Para AMD'),
+(5, 'Discos Duro Portatil'),
+(6, 'Board Para INTEL'),
+(7, 'Discos Duro PC'),
+(8, 'Memoria RAM Portatil'),
+(9, 'Tarjeta De Video'),
+(10, 'Tablet'),
+(11, 'Chasis (CASE)'),
+(12, 'Unidades'),
+(13, 'Monitores'),
+(14, 'Licenciamiento'),
+(15, 'Discos Externos USB'),
+(16, 'Impresoras'),
+(17, 'Proyectores'),
+(18, 'Sistema POS'),
+(19, 'Memorias USB'),
+(20, 'Memorias MICRO SD'),
+(21, 'CÃ¡maras '),
+(22, 'Tintas'),
+(23, 'Teclado'),
+(24, 'Mouse'),
+(25, 'Tarjetas De TV'),
+(26, 'Diademas'),
+(27, 'Parlantes'),
+(28, 'Otros'),
+(30, 'Microfono'),
+(31, 'Cables Y Otros'),
+(32, 'Cargadore'),
+(33, 'Bases Refrigerantes Portatil'),
+(34, 'Tarjetas De Red'),
+(35, 'Routers'),
+(36, 'Fuentes/RegulaciÃ³n'),
+(37, 'UPS'),
+(38, 'Computadores De Escritorio'),
+(39, 'Computadores Todo En Uno'),
+(40, 'Computadores Portatiles');

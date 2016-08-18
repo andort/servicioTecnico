@@ -259,7 +259,8 @@
                     <div class="col-lg-4">
                       <div class="form-group text-center">
                         <small>No. Articulo</small>
-                        <B><span id="txt_id" class=""></span></B>
+                        <B><span id="txt_id" name="txt_id" class=""></span></B>
+                        <input class="form-control input-sm" id="txt_id_hide" name="txt_id_hide" style="display:none" ></input>
                       </div>
                     </div>
                     <div class="col-lg-8">
@@ -474,7 +475,8 @@
 
 
     //funcion para llevar los datos al modal
-    function llevar_datos_modal(id, serial, articulo, marca, proveedor, estado, coment1, coment2, coment3){
+    function llevar_datos_modal(id_hide, id, serial, articulo, marca, proveedor, estado, coment1, coment2, coment3){
+        $("#txt_id_hide").val(id_hide);
         $("#txt_id").html(id);
         $("#txt_serial").html(serial);
         $("#txt_art").html(articulo);

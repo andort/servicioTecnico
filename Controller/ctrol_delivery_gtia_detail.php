@@ -77,7 +77,7 @@
 	//hacer el listado de los estados de los articulos
 	$c_Estado_art = tb_estado_articulo_cliente::find_by_sql("SELECT descripcion, id_estado_art
 															FROM tb_estado_articulo_clientes
-															WHERE id_estado_art > 3 AND id_estado_art < 7");
+															WHERE id_estado_art > 2 AND id_estado_art < 6");
 	$combo_Estado_art = "";
 	foreach ($c_Estado_art as $key => $value){
 		$combo_Estado_art .= "<option value='".$value->id_estado_art."'>".$value->descripcion."</option>";
@@ -117,19 +117,19 @@
 	//Hacer cambios en el Articulo
 	if (isset($_POST['btnEnviar'])){
 		
-		$desicion = $_POST['txtRol'];
+		$decision = $_POST['txtRol'];
 		
-		if($desicion == 5){
+		if($decision == 5){
 			if($_POST['txtArt'] != "" && $_POST['txtMarca'] != "" && $_POST['txtRef'] != "" && $_POST['txtProv'] != "" && $_POST['txtFprov'] != "" && $_POST['txtSerial'] != ""){
 				
-			$serv =	tb_articulo::find('last',array('conditions' => array('id_articulo = ?',$_POST['txt_id'])));
+			$serv =	tb_articulo::find('last',array('conditions' => array('id_articulo = ?',$_POST['txt_id_hide'])));
 			$serv->estado = $_POST['txtRol'];
 			$serv->fecha_solution = $fecha;
 			$serv->save();
 			
 			//Ingreso art de cambio en la tabla tb_articulos_cambio
 			$ingresar = array(
-			'id_art_cambio'=> $_POST['txt_id'],
+			'id_art_cambio'=> $_POST['txt_id_hide'],
 			'art'=> $_POST['txtArt'],
 			'marca'=> $_POST['txtMarca'],
 			'ref'=> $_POST['txtRef'],
@@ -148,7 +148,7 @@
 				echo "<script>	alert('Llene los Datos Correctamente'); </script>";
 				}
 		} else {
-			$serv =	tb_articulo::find('last',array('conditions' => array('id_articulo = ?',$_POST['txt_id'])));
+			$serv =	tb_articulo::find('last',array('conditions' => array('id_articulo = ?',$_POST['txt_id_hide'])));
 			$serv->estado = $_POST['txtRol'];
 			$serv->fecha_solution = $fecha;
 			$serv->save();
@@ -236,14 +236,15 @@
 						<input type="hidden" id="txtDelet" name="txtDelet" value="'.$var1->id_articulo.'">
 						<button type="submit" class="btn btn-success btn-sm" id="Btn_Find" data-toggle="modal" data-target="#modal_AddArt" onclick="llevar_datos_modal(
 						'."'".$var1->id_articulo."'".',
+						'."'".$var1->id_articulo."'".',
 						'."'"."Serial: ".$var1->serial."'".',
 						'."'".$var1->articulo." ".$var1->marca_art."'".',
 						'."'"."Referencia: ".$var1->ref."'".',
 						'."'"."Proveedor: ".$var1->proveedor." - ".$var1->fecha_prov."'".',
 						'."'".$var1->descripcion."'".',
-						'."'"."Comentario Cliente: ".$var1->problema."'".',
+						'."'".$var1->problema."'".',
 						'."'"."Comentario Técnico: ".$var1->observacion."'".',
-						'."'"."Solución: ".$var1->solucion."'".')">
+						'."'".$var1->solucion."'".')">
 						<span class="glyphicon glyphicon-plus-sign"></span></button>
 						</form></td>';						
 				$listar .= "</tr>";
