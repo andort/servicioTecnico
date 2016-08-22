@@ -218,6 +218,7 @@
 				$listar .= "<td class='font_small2'>".$var1->marca_art." - ".$var1->ref."</td>";
 				$listar .= "<td class='font_small2'>".$var1->proveedor." - ".$var1->fecha_prov."</td>";			
 				$listar .= "<td class='font_small2'>".$var1->problema."</td>";
+				$listar .= "<td class='font_small2'>".$var1->descripcion."</td>";
 				$listar .= '<td class="small text-center"><form method="POST">
 						<input type="hidden" id="txtDelet" name="txtDelet" value="'.$var1->id_articulo.'">
 						<button type="submit" class="btn btn-warning btn-sm" id="Btn_Find" disabled="disabled">
@@ -232,6 +233,7 @@
 				$listar .= "<td class='font_small2'>".$var1->marca_art." - ".$var1->ref."</td>";
 				$listar .= "<td class='font_small2'>".$var1->proveedor." - ".$var1->fecha_prov."</td>";			
 				$listar .= "<td class='font_small2'>".$var1->problema."</td>";
+				$listar .= "<td class='font_small2'>".$var1->descripcion."</td>";
 				$listar .= '<td class="small text-center"><form method="POST">
 						<input type="hidden" id="txtDelet" name="txtDelet" value="'.$var1->id_articulo.'">
 						<button type="submit" class="btn btn-success btn-sm" id="Btn_Find" data-toggle="modal" data-target="#modal_AddArt" onclick="llevar_datos_modal(

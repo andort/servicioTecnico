@@ -4,10 +4,10 @@ INSERT INTO `tb_estado_articulo_clientes` (`id_estado_art`, `descripcion`) VALUE
 (2, 'Cliente - Cambiar'),
 (3, 'Cliente - Corregido'),
 (4, 'Cliente - Rechazado'),
-(5, 'Cliente - Cambio'),
+(5, 'Cliente - Se cambia'),
 (6, 'Proveedor - Se EnvÃ­a'),
-(7, 'Proveedor - Paga Articulo'),
-(8, 'Proveedor - Nota Credito'),
+(7, 'Proveedor - Paga articulo'),
+(8, 'Proveedor - Nota credito'),
 (9, 'Proveedor - Rechazado');
 
 

@@ -131,7 +131,8 @@
                     <th class="small">Articulo</th>
                     <th class="small">Marca - Ref.</th>
                     <th class="small">Proveedor</th>
-                    <th class="small">problema o Solución</th>            
+                    <th class="small">problema o Solución</th> 
+                    <th class="small">Estado</th>            
                     <th class="small text-center">Opción</th>  
                   </tr>
                 </thead>

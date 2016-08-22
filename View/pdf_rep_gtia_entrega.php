@@ -36,7 +36,7 @@
 	$entrada_tel = "";
 	$cliente_entrada = "";
 
-	$mostrar = tb_movimiento::find_by_sql("SELECT m.id_movimiento, m.id_estado_movimiento, m.fecha_inicio, m.sede, m.create_by, p.nombres, p.apellidos, m.comentario_cliente, m.comentario_tecnico, m.comentario_solucion, p.telefono, p.celular, p.email, p.direccion, p.id_persona, e.id_estado_movimiento, e.descripcion, s.n_id_entrada, s.name_entrada, s.tel_entrada
+	$mostrar = tb_movimiento::find_by_sql("SELECT m.id_movimiento, m.id_estado_movimiento, m.fecha_inicio, m.fecha_fin, m.sede, m.create_by, p.nombres, p.apellidos, m.comentario_cliente, m.comentario_tecnico, m.comentario_solucion, p.telefono, p.celular, p.email, p.direccion, p.id_persona, e.id_estado_movimiento, e.descripcion, s.n_id_entrada, s.name_entrada, s.tel_entrada
 										FROM tb_movimientos m
 										JOIN tb_personas p  ON p.id_persona = m.cliente
 										JOIN tb_estado_movimientos e ON e.id_estado_movimiento = m.id_estado_movimiento
@@ -46,7 +46,7 @@
 	
 	
 	foreach($mostrar as $var1){
-			$date_create = $var1->fecha_inicio;
+			$date_create = $var1->fecha_fin;
 			$name = $var1->nombres." ".$var1->apellidos;
 			$identificacion = $var1->id_persona;
 			$email = $var1->email;
@@ -72,27 +72,49 @@
 
 
 	//recorremos la tb_articulos para mostrar los articulos relacionados
-	$mostrar = tb_articulo::find_by_sql("SELECT p.articulo, a.id_articulo, a.proveedor, a.fecha_prov, m.marca_art, a.ref, a.problema, a.serial, a.observacion, a.nro_fac
+	$mostrar = tb_articulo::find_by_sql("SELECT p.articulo, a.id_articulo, a.proveedor, a.fecha_prov, m.marca_art, a.ref, a.problema, a.serial, a.observacion, a.nro_fac, a.solucion, est.descripcion, est.id_estado_art, ac.art as cambio_art, ac.marca as cambio_marca, ac.ref as cambio_ref, ac.serial as cambio_serial, ac.proveedor as cambio_proveedor, ac.fecha_prov as cambio_fecha_prov, artcambio.articulo as cambio_articulo, marcacambio.marca_art as cambio_marca_art
 									FROM tb_articulos a 
 									join tb_marca m
 									ON m.id = a.marca
 									JOIN tb_art p
-									ON a.art = p.id  
+									ON a.art = p.id 
+									JOIN tb_estado_articulo_clientes est
+									ON est.id_estado_art = a.estado 
+									JOIN tb_articulos_cambio ac
+									ON ac.id_art_cambio = a.id_articulo  
+									JOIN tb_art artcambio
+									ON ac.art = artcambio.id
+									join tb_marca marcacambio
+									ON marcacambio.id = ac.marca
 									WHERE a.id_movimiento = '$nro_servicio'");
 		$listar= "";
 
 		foreach($mostrar as $var1){
+
+			$decision_status = $var1->id_estado_art;
+
+			if($decision_status == 5){
 				$listar .= "<tr>";
 				$listar .= "<td class='font_small2'>".$var1->serial."</td>";
-				$listar .= "<td class='font_small2'>".$var1->articulo."</td>";
-				$listar .= "<td class='font_small2'>".$var1->marca_art." - ".$var1->ref."</td>";
-				$listar .= "<td class='font_small2'>".$var1->nro_fac."</td>";
-				$listar .= "<td class='font_small2'>".$var1->proveedor." - ".$var1->fecha_prov."</td>";				
+				$listar .= "<td class='font_small2'>".$var1->articulo." ".$var1->marca_art."<br />Ref: ".$var1->ref."</td>";
+				$listar .= "<td class='font_small2'>".$var1->proveedor."<br />".$var1->fecha_prov."</td>";				
 				$listar .= "<td class='font_small2'>".$var1->problema."</td>";
-				$listar .= "<td class='font_small2'>".$var1->observacion."</td>";						
+				$listar .= "<td class='font_small2'>".$var1->descripcion."</td>";
+				$listar .= "<td class='font_small2'>".$var1->cambio_articulo." ".$var1->cambio_marca_art."<br />Ref: ".$var1->cambio_ref."<br />Serial: ".$var1->cambio_serial."<br />Proveedor: ".$var1->cambio_proveedor." - ".$var1->cambio_fecha_prov."</td>";
 				$listar .= "</tr>"; 
-				
-			}
+
+			}else{
+
+				$listar .= "<tr>";
+				$listar .= "<td class='font_small2'>".$var1->serial."</td>";
+				$listar .= "<td class='font_small2'>".$var1->articulo." ".$var1->marca_art."<br />Ref: ".$var1->ref."</td>";
+				$listar .= "<td class='font_small2'>".$var1->proveedor."<br />".$var1->fecha_prov."</td>";				
+				$listar .= "<td class='font_small2'>".$var1->problema."</td>";
+				$listar .= "<td class='font_small2'>".$var1->descripcion."</td>";
+				$listar .= "<td class='font_small2'>".$var1->solucion."</td>";						
+				$listar .= "</tr>"; 
+			}	
+		}
 
 	
 
@@ -124,7 +146,7 @@ $html = '
 					</td>
 					<td width="300" height="100" valign="middle" align="center">
 					<span class="font_small2">
-						<h2>Servicio Garantía</h2>
+						<h2>Servicio Entrega Garantía</h2>
 						Nro. Servicio<br>
 						<h2><b>'.$nro_servicio.'</b></h2>
 						Fecha: '.$date_create.'
@@ -167,13 +189,12 @@ $html = '
 			<table width="900" height="260" class="border_bot">
 			<thead>
               <tr>
-                <th class="font_small3" width="150" align="left">Serial</th>
-                <th class="font_small3" width="150" align="left">Artículo</th>
-                <th class="font_small3" width="150" align="left">Marca y Ref.</th>
-				<th class="font_small3" width="150" align="left">Nro. Fac</th>
-                <th class="font_small3" width="150" align="left">Prov y Fecha</th>
-				<th class="font_small3" width="150" align="left">Problema</th>
-                <th class="font_small3" width="150" align="left">Observación Tecnico</th>             
+                <th class="font_small3" width="100" align="left">Serial</th>
+                <th class="font_small3" width="200" align="left">Artículo</th>
+                <th class="font_small3" width="120" align="left">Prov y Fecha</th>
+				<th class="font_small3" width="230" align="left">Problema</th>
+                <th class="font_small3" width="100" align="left">Solución</th>
+				<th class="font_small3" width="220" align="left"></th>          
               </tr>
             </thead>
             <tbody height="260">
@@ -191,15 +212,20 @@ $html = '
 				<div>
 				<table width="900" height="50" align="left" class="border_bot">
 					<tr>
-					  <td width="450" height="50" valign="top" class="border_right">
-					  <span class="font_small">
-						Observaciones Cliente: '.$o_cliente.'<br>
-					  </span>
+					  <td width="300" height="50" valign="top" class="border_right">
+						  <span class="font_small">
+							Observaciones Cliente: '.$o_cliente.'<br>
+						  </span>
 					  </td>
-					  <td width="450" height="50" valign="top" align="">
-					  <span class="font_small">
-						Observaciones Técnico: '.$o_tecnico.'<br>
-					  </span>
+					  <td width="300" height="50" valign="top" align="">
+						  <span class="font_small">
+							Observaciones Técnico: '.$o_tecnico.'<br>
+						  </span>
+					  </td>
+					  <td width="300" height="50" valign="top" align="">
+						  <span class="font_small">
+							Observación Final: '.$o_solucion.'<br>
+						  </span>
 					  </td>
 					</tr>
 				</table>
