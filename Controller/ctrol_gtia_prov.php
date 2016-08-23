@@ -23,10 +23,10 @@
 	$proveedor2 = "";
 	
 	//hacer el listado de los PROVEEDORES CON LA CONDICION DE ESTADO - - -
-	$c_Prov = tb_articulo::find_by_sql('SELECT proveedor
+	$c_Prov = tb_articulo::find_by_sql("SELECT proveedor
 											FROM tb_articulos
-											WHERE estado = 3
-											GROUP BY proveedor');
+											WHERE estado = '$estado'
+											GROUP BY proveedor");
 	$combo_Prov = "";
 	foreach ($c_Prov as $key => $value){
 		$combo_Prov .= "<option value='".$value->proveedor."'>".$value->proveedor."</option>";
@@ -105,7 +105,7 @@ if (isset($_POST['btnEnviar'])){
 										ON m.id = a.marca
 										JOIN tb_art p
 										ON a.art = p.id  
-										WHERE a.estado = 3 && a.proveedor = '$proveedor'");
+										WHERE a.estado = '$estado' && a.proveedor = '$proveedor'");
 		$listar= "";
 
 		foreach($mostrar as $var1){

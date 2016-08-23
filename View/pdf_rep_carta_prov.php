@@ -36,6 +36,7 @@
 	$entrada_tel = "";
 	$cliente_entrada = "";
 	$estado = 5;
+	$estado_enviado_prov = 6;
 	$fecha = date("d-m-Y H:i:s");
 
 	//CARGO LOS DATOS DE EL PROVEEDOR
@@ -95,7 +96,7 @@
 									ON m.id = a.marca
 									JOIN tb_art p
 									ON a.art = p.id  
-									WHERE a.estado = 3 and a.proveedor = '$nro_servicio'");
+									WHERE a.estado = 5 and a.proveedor = '$nro_servicio'");
 		$listar= "";
 
 		foreach($mostrar as $var1){
@@ -110,7 +111,7 @@
 
 //Actualizo el estado y la fecha de envío al proveedor de los artículos listados.
 			$update =	tb_articulo::find('last',array('conditions' => array('id_articulo = ?', $var1->id_articulo)));
-			$update->estado = 5;
+			$update->estado = $estado_enviado_prov;
 			$update->fecha_send_prov = $fecha;
 			$update->save();
 

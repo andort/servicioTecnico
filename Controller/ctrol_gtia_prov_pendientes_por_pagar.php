@@ -22,11 +22,11 @@
 	$fecha = date("d-m-Y H:i:s");
 	$proveedor2 = "";
 	
-	// hacer el listado de los PROVEEDORES CON LA CONDICION DE ESTADO 5 - - -
+	// hacer el listado de los PROVEEDORES CON LA CONDICION DE ESTADO 6 - - -
 	// osea los que ya se le enviaron al cliente - - - - - - - - - - - - - -
 	$c_Prov = tb_articulo::find_by_sql('SELECT proveedor
 											FROM tb_articulos
-											WHERE estado = 5
+											WHERE estado = 6
 											GROUP BY proveedor');
 	$combo_Prov = "";
 	foreach ($c_Prov as $key => $value){
@@ -119,7 +119,7 @@
 										ON m.id = a.marca
 										JOIN tb_art p
 										ON a.art = p.id  
-										WHERE a.estado = 5 && a.proveedor = '$proveedor'");
+										WHERE a.estado = 6 && a.proveedor = '$proveedor'");
 		$listar= "";
 
 		foreach($mostrar as $var1){

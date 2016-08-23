@@ -195,33 +195,29 @@
 
                     <div class="col-lg-5"><br />  
                         <B><span>Ref: </span></B><span id="txt_referencia"></span><br />
-                        <B><span>Marca: </span></B><span id="txt_marca_articulo"></span><br />
-                        <B><span>Serial: </span></B><span id="txt_serial"></span>
+                        <B><span>Serial: </span></B><span id="txt_serial"></span><br />
+                        <B><span>Estado: </span></B><span id="txt_estado_actual"></span>
                     </div>
 
                     <div class="col-lg-5"><br />  
-                        <B><span>Fecha Ingreso: </span></B><span id="txt_referencia"></span><br />
-                        <B><span>Fecha Envío: </span></B><span id="txt_fecha_envio"></span><br />
-                        <B><span>Fecha Resuelto: </span></B><span id="txt_serial"></span>
+                        <B><span>Fecha ingreso: </span></B><span id="txt_fecha_creacion"></span><br />
+                        <B><span>Fecha envío a prov: </span></B><span id="txt_fecha_envio"></span><br />
+                        <B><span>Fecha solución Prov: </span></B><span id="txt_fecha_pago_prov"></span>
                     </div>
 
                 </div>
-                <hr>
-                <br />
+                <br/>
+                
                 <div class="row">
-
-                    <div class="col-lg-4">
-                        <textarea class="form-control input-sm" rows="4" id="txt_solucion" readonly="readonly" style="resize:none;">
-                        </textarea>
+                    <div class="col-lg-2">
                     </div>
-
-                    <div class="col-lg-4">
+                    <div class="col-lg-5">
                         <textarea class="form-control input-sm" rows="4" id="txt_problema" readonly="readonly" style="resize:none;">
                         </textarea>
                     </div>
 
-                    <div class="col-lg-4">
-                        <textarea class="form-control input-sm" rows="4" id="" readonly="readonly" style="resize:none;">
+                    <div class="col-lg-5">
+                        <textarea class="form-control input-sm" rows="4" id="txt_solucion" readonly="readonly" style="resize:none;">
                         </textarea>
                     </div>
 
@@ -343,14 +339,17 @@
 
 
     //funcion para llevar los datos al modal
-    function llevar_datos_modal(id, articulo, marca_articulo, referencia, serial, fecha_envio, valor, solucion, problema){
+    function llevar_datos_modal(id, articulo, marca_articulo, referencia, serial, fecha_envio, fecha_creacion, fecha_pago_prov, valor, estado_actual, solucion, problema){
         $("#txt_id").html(id);
         $("#txt_articulo").html(articulo);
         $("#txt_marca_articulo").html(marca_articulo);
         $("#txt_referencia").html(referencia);
         $("#txt_serial").html(serial);
         $("#txt_fecha_envio").html(fecha_envio);
+        $("#txt_fecha_creacion").html(fecha_creacion);
+        $("#txt_fecha_pago_prov").html(fecha_pago_prov);
         $("#txt_valor").html(valor);
+        $("#txt_estado_actual").html(estado_actual);
         $("#txt_solucion").html(solucion);
         $("#txt_problema").html(problema);
     }
