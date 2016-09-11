@@ -389,6 +389,10 @@
           <div class="modal-footer">
           <div class="row">
                 <div class="col-lg-4">
+   
+                </div>
+
+                <div class="col-lg-4">
                     <div class="form-group">
                     <div class="col-lg-12">
                     <button type="button" class="btn btn-danger btn-sm btn-block" data-dismiss="modal">Cerrar</button>
@@ -397,15 +401,15 @@
                 <div class="col-lg-4">
                     <div class="form-group">
                     <div class="col-lg-12">
-                    <button type="button" class="btn btn-info btn-sm btn-block" name="btnEnv" onclick="aggProd1()">Agregar Igual</button>
+                    <button type="button" class="btn btn-info btn-sm btn-block" name="btnEnv" onclick="aggProd1()">Agregar</button>
                     </div></div>
                 </div>
-                <div class="col-lg-4">
+                <!-- <div class="col-lg-4">
                     <div class="form-group">
                     <div class="col-lg-12">
                     <button type="button" class="btn btn-success btn-sm btn-block" name="btnEnv" onclick="aggProd()">Agregar</button>
                     </div></div>
-                </div>
+                </div> -->
             </div>
             
             
