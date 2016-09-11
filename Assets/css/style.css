@@ -170,6 +170,10 @@ body{
 .class_topborder{
 	margin-top: 5px !important;
 	}
+
+.top-border{
+	margin-top: 20px !important;
+	}
 	
 .class_topsolo{
 	margin: 8px 0px 0px -15px !important;
@@ -246,4 +250,14 @@ body{
 
 .font_big{
 	font-size:17px;
+}
+
+.font-title-home01{
+	font-size:52px;
+	color: #a6a6a6;
+}
+
+.font-title-home02{
+	font-size:44px;
+	color: #cccccc;
 }

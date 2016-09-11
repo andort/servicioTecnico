@@ -69,233 +69,31 @@
     <div class="panel panel-default">
     <div class="panel-body clsPerPanelBody"> <!-- por defecto - panel contenido -->
 
+    <div class="col-lg-12">
+      <p class="font-title-home01"><b>Portal Web Ledacom,</b> Para la gestión de gantías y servicio técnico</p>
+    </div><br /><br /><br />
 
+    <form id="" method="post">
+    <div class="col-lg-6 top-border">
+      <div class="panel panel-default">
+        <div class="panel-body">
+          <span>Para ingresar una Garantía</span><br /><br />
+          <!-- <button type="submit" id="btnGtia" class="btn btn-info btn-block">INGRESAR GARANTÍA</button> -->
+          <a class="btn btn-info btn-block" href="ctrol_add_gtia.php">INGRESAR GARANTÍA</a>
+          
+        </div>
+      </div>
+    </div>
 
-  <div class="panel-group" id="accordion"><!-- inicio menu colapse-->
-  <div class="panel panel-default">
-      
-          <div class="panel-heading bg-03"> <!-- inicio Menu 02-->
-              <h4 class="panel-title">
-                <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne">
-                  <h5>&nbsp;Garantías Próximas a Vencer</h5>
-                </a>
-              </h4>
-            </div>
-            <div id="collapseOne" class="panel-collapse collapse in">
-              <div class="panel-body">
-                  <!-- Table -->
-                  <div class="table-responsive">
-                      <table class="table table-hover">
-                        <thead>
-                          <tr>
-                            <th>Nro. Orden</th>
-                            <th>F. Vencimiento</th>
-                            <th>F. Recibo</th>
-                            <th>Artículo</th>
-                            <th>Nombre Cliente</th>
-                            <th>Proovedor</th>
-                          </tr>
-                        </thead>
-                        <tbody>
-                          <tr id="tr1" onmouseover="this.style.cursor='pointer';" class="warning">
-                            <td>10000001</td>
-                            <td>24 /11 /2014</td>
-                            <td>Table cell</td>
-                            <td>Mouse Inalambrico</td>
-                            <td>Daneisy Echavarria</td>
-                            <td>117</td>
-                            
-                          </tr>
-                          <tr>
-                            <td>10000002</td>
-                            <td>24 /11 /2014</td>
-                            <td>Table cell</td>
-                            <td>Teclado</td>
-                            <td>Predro Infantes</td>
-                            <td>45</td>
-                          </tr>
-                          <tr class="warning">
-                            <td>10000003</td>
-                            <td>24 /11 /2014</td>
-                            <td>Table cell</td>
-                            <td>Monitor</td>
-                            <td>Alberto Style</td>
-                            <td>45</td>
-                          </tr>
-                          <tr>
-                            <td>10000004</td>
-                            <td>24 /11 /2014</td>
-                            <td>Table cell</td>
-                            <td>Portatil</td>
-                            <td>Pablo Angel</td>
-                            <td>112</td>
-                          </tr>
-                          <tr class="warning">
-                            <td>10000005</td>
-                            <td>24 /11 /2014</td>
-                            <td>Table cell</td>
-                            <td>T. Red Inalambrica</td>
-                            <td>Carlos Valderrama</td>
-                            <td>98</td>
-                          </tr>
-                        </tbody>
-                      </table>
-                  </div>
-                  <!-- Fin Table 01 -->
-              </div>
-            </div>
-          </div><!-- FIN Menu 01-->
-          
-          
-          <div class="panel panel-default"> <!-- inicio Menu 02 -->
-            <div class="panel-heading bg-02">
-              <h4 class="panel-title">
-                <a data-toggle="collapse" data-parent="#accordion" href="#collapseTwo">
-                  <h5>&nbsp;Servicios Próximos a Vencer</h5>
-                </a>
-              </h4>
-            </div>
-            <div id="collapseTwo" class="panel-collapse collapse">
-              <div class="panel-body">
-                <!-- Table -->
-                  <div class="table-responsive">
-                      <table class="table table-hover">
-                        <thead>
-                          <tr>
-                            <th>Nro. Orden</th>
-                            <th>F. Vencimiento</th>
-                            <th>F. Recibo</th>
-                            <th>Artículo</th>
-                            <th>Nombre Cliente</th>
-                            <th>Proovedor</th>
-                          </tr>
-                        </thead>
-                        <tbody>
-                          <tr class="danger">
-                            <td>10000001</td>
-                            <td>24 /11 /2014</td>
-                            <td>Table cell</td>
-                            <td>Mouse Inalambrico</td>
-                            <td>Daneisy Echavarria</td>
-                            <td>117</td>
-                          </tr>
-                          <tr>
-                            <td>10000002</td>
-                            <td>24 /11 /2014</td>
-                            <td>Table cell</td>
-                            <td>Teclado</td>
-                            <td>Predro Infantes</td>
-                            <td>45</td>
-                          </tr>
-                          <tr class="danger">
-                            <td>10000003</td>
-                            <td>24 /11 /2014</td>
-                            <td>Table cell</td>
-                            <td>Monitor</td>
-                            <td>Alberto Style</td>
-                            <td>45</td>
-                          </tr>
-                          <tr>
-                            <td>10000004</td>
-                            <td>24 /11 /2014</td>
-                            <td>Table cell</td>
-                            <td>Portatil</td>
-                            <td>Pablo Angel</td>
-                            <td>112</td>
-                          </tr>
-                          <tr class="danger">
-                            <td>10000005</td>
-                            <td>24 /11 /2014</td>
-                            <td>Table cell</td>
-                            <td>T. Red Inalambrica</td>
-                            <td>Carlos Valderrama</td>
-                            <td>98</td>
-                          </tr>
-                        </tbody>
-                      </table>
-                  </div>
-                  <!-- Fin Table 02 -->
-              </div>
-            </div>
-          </div><!-- FIN Menu 02-->
-          
-          
-          <div class="panel panel-default"> <!-- inicio Menu 03 -->
-            <div class="panel-heading bg-03">
-              <h4 class="panel-title">
-                <a data-toggle="collapse" data-parent="#accordion" href="#collapseThree">
-                  <h5>&nbsp;Garantías Proovedor Próximas a Vencer</h5>
-                </a>
-              </h4>
-            </div>
-            <div id="collapseThree" class="panel-collapse collapse">
-              <div class="panel-body">
-                <!-- Table -->
-                  <div class="table-responsive">
-                      <table class="table table-hover">
-                        <thead>
-                          <tr>
-                            <th>Nro. Orden</th>
-                            <th>F. Vencimiento</th>
-                            <th>F. Recibo</th>
-                            <th>Artículo</th>
-                            <th>Nombre Cliente</th>
-                            <th>Proovedor</th>
-                          </tr>
-                        </thead>
-                        <tbody>
-                          <tr class="warning">
-                            <td>10000001</td>
-                            <td>24 /11 /2014</td>
-                            <td>Table cell</td>
-                            <td>Mouse Inalambrico</td>
-                            <td>Daneisy Echavarria</td>
-                            <td>117</td>
-                          </tr>
-                          <tr>
-                            <td>10000002</td>
-                            <td>24 /11 /2014</td>
-                            <td>Table cell</td>
-                            <td>Teclado</td>
-                            <td>Predro Infantes</td>
-                            <td>45</td>
-                          </tr>
-                          <tr class="warning">
-                            <td>10000003</td>
-                            <td>24 /11 /2014</td>
-                            <td>Table cell</td>
-                            <td>Monitor</td>
-                            <td>Alberto Style</td>
-                            <td>45</td>
-                          </tr>
-                          <tr>
-                            <td>10000004</td>
-                            <td>24 /11 /2014</td>
-                            <td>Table cell</td>
-                            <td>Portatil</td>
-                            <td>Pablo Angel</td>
-                            <td>112</td>
-                          </tr>
-                          <tr class="warning">
-                            <td>10000005</td>
-                            <td>24 /11 /2014</td>
-                            <td>Table cell</td>
-                            <td>T. Red Inalambrica</td>
-                            <td>Carlos Valderrama</td>
-                            <td>98</td>
-                          </tr>
-                        </tbody>
-                      </table>
-                  </div>
-                  <!-- Fin Table 03 -->
-              </div>
-            </div>
-          </div><!-- FIN Menu 03-->
-    
-               
-  </div>              
-    </div> <!-- Fin menu colapse-->  
-               
+    <div class="col-lg-6 top-border">
+      <div class="panel panel-default">
+        <div class="panel-body">
+          <span>Para ingresar un servicio técnico</span><br /><br />
+          <a class="btn btn-warning btn-block" href="ctrol_add_serv.php">INGRESAR SERVICIO TÉCNICO</a>
+        </div>
+      </div>
+    </div>
+    </form>                
                 
         
       
@@ -333,15 +131,6 @@
   //funcion para el link de las tablas, luego quitar
   $(document).ready(function(){
   
-  $('tr').attr("onclick","alert('hola')");
-  $('tr').attr("onmouseover","this.style.cursor='pointer'");
-
-
-  $.PNotify({
-    title: "Over Here",
-    text: "Check me out. I'm in a different stack.",
-    addclass: "stack-custom",
-   });
 	
 	});
 	
@@ -356,17 +145,6 @@
             }
 
         }
-
-
-	//funcion para mostar o esconder div de formulario
- 	function mostrar (){
-	 if(($("#remove").css("display")== 'none')){
-		 $("#remove").css("display","block");
-		 }else{
-			 $("#remove").css("display","none");
-			 }
-	 	}
-
 
 
 </script>
